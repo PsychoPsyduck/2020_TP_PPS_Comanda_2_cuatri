@@ -1,0 +1,7 @@
+{
+  "name": "TP-Comanda",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
