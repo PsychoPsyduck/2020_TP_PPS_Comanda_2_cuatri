@@ -8,7 +8,7 @@ _Este proyecto fue generado con Ionic versión 5.0.0_
 
 Integrantes
 
-* Joaquin Esposito
+* Joaquin Esposito </br>
 * Nicolas Sande
 
 _Trabajaremos creando una rama en Github para cada uno que luego se uniran para integrar los cambios._
