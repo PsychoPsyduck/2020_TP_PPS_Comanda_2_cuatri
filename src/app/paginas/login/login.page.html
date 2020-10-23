@@ -1,9 +1,40 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Login</ion-title>
+  <ion-toolbar color='primary'>
+    <ion-title text-center>La Comanda</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<br>
 
+<ion-content>
+  <ion-toolbar>
+    <ion-title>Iniciar Sesión</ion-title>
+    <br>
+    <form [formGroup]="form" >
+      <ion-item class="full-width-input">
+        <ion-label position='floating'>Correo</ion-label>
+        <ion-input type="text" formControlName="mail"></ion-input> 
+      </ion-item>
+      <br>
+      <ion-item class="full-width-input">
+        <ion-label position='floating'>Contraseña</ion-label>
+        <ion-input type="password" formControlName="clave"></ion-input> 
+      </ion-item>
+      <br>
+      <ion-button [hidden]="ocultarVerificar"  color='secondary' *ngIf="logeando"  (click)="Entrar()">Entrar</ion-button>
+      <ion-button [hidden]="!ocultarVerificar" color="secondary" *ngIf="logeando"  (click)="Entrar()"><i class="fa fa-spinner fa-spin"></i> Ingresando</ion-button>
+      
+    </form>
+  </ion-toolbar>
+  
+  <ion-fab id="f-boton-idioma" horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="primary">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="secondary" (click)="AutoLog('admin')">Sprv</ion-fab-button>
+      <ion-fab-button color="secondary" (click)="AutoLog('empleado')">Empl</ion-fab-button>
+      <ion-fab-button color="secondary" (click)="AutoLog('cliente')">Clnt</ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>
