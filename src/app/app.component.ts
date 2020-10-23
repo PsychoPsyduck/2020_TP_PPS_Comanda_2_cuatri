@@ -13,6 +13,7 @@ import { timer } from 'rxjs'
 })
 export class AppComponent {
   showSplash = true;
+  clase = "candado ld ld-blur-in";
 
   constructor(
     private platform: Platform,
@@ -28,7 +29,7 @@ export class AppComponent {
       this.splashScreen.hide();
 
 
-      timer(4000).subscribe(() => this.showSplash = false)
+      timer(6000).subscribe(() => this.showSplash = false)
     });
   }
 }
