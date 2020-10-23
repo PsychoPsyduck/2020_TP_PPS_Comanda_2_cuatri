@@ -22,7 +22,7 @@
       </ion-item>
       <br>
       <ion-button [hidden]="ocultarVerificar"  color='secondary' *ngIf="logeando"  (click)="Entrar()">Entrar</ion-button>
-      <ion-button [hidden]="!ocultarVerificar" color="secondary" *ngIf="logeando"  (click)="Entrar()"><i class="fa fa-spinner fa-spin"></i> Ingresando</ion-button>
+      <!-- <ion-button [hidden]="!ocultarVerificar" color="secondary" *ngIf="logeando"  (click)="Entrar()"><i class="fa fa-spinner fa-spin"></i> Ingresando</ion-button> -->
       
     </form>
   </ion-toolbar>
@@ -32,6 +32,7 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
     <ion-fab-list side="top">
+      <ion-fab-button color="secondary" (click)="AutoLog('jefe')">Jefe</ion-fab-button>
       <ion-fab-button color="secondary" (click)="AutoLog('admin')">Sprv</ion-fab-button>
       <ion-fab-button color="secondary" (click)="AutoLog('empleado')">Empl</ion-fab-button>
       <ion-fab-button color="secondary" (click)="AutoLog('cliente')">Clnt</ion-fab-button>
