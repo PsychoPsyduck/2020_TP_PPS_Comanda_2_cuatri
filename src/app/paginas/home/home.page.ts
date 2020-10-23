@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss'],
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit {
+export class HomePage {
 
-  constructor() { }
+  constructor(public router: Router) {}
 
-  ngOnInit() {
+  ruteador(opcion) {
+    switch (opcion) {
+      case "registroAdm":
+          this.router.navigate(['/registro-adm'])
+        break;
+    }
   }
 
 }

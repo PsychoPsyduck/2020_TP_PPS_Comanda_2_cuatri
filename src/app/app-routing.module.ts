@@ -13,7 +13,8 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./paginas/home/home.module').then( m => m.HomePageModule)
-  },  {
+  },
+  {
     path: 'registro-adm',
     loadChildren: () => import('./paginas/registro-adm/registro-adm.module').then( m => m.RegistroAdmPageModule)
   }
