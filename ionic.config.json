@@ -1,7 +1,8 @@
 {
   "name": "TP-Comanda",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
