@@ -1,4 +1,4 @@
-<div *ngIf="showSplash" class="splash">
+<!-- <div *ngIf="showSplash" class="splash">
   <br>
   <br>
   <br>
@@ -14,7 +14,28 @@
   <br>
   <br>
   <h4>Comisión 4B</h4>
+</div> -->
+<div class="container" [style.display]="showSplash ? 'flex' : 'none'">
+  <div class="splash" >
+    <h1>Los Borbotones </h1>
+    
+    <!-- <img  src="../assets/login.gif" alt="">  -->
+     <div class="imagen">
+      
+       <div [ngClass]="clase" >
+         <img class="imagen"  src="../../assets/img/gif-splash.gif" alt="">
+         <!-- <img class="imagen" src="../assets/candado.png" alt=""> -->
+       </div>
+
+     </div>
+      
+    <h2>Sande</h2>
+    <h2>Espósito</h2>
+
+
+  </div>
 </div>
+
 <ion-app>
   <ion-router-outlet></ion-router-outlet>
 </ion-app>
