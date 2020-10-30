@@ -22,6 +22,15 @@ export class HomePage {
       case "registroMesa":
           this.router.navigate(['/registro-mesa'])
         break;
+      case "envioDomicilio":
+          this.router.navigate(['/envio-domicilio'])
+        break;
+      case "pedirMesa":
+          this.router.navigate(['/pedir-mesa'])
+        break;
+      case "reservarMesa":
+          this.router.navigate(['/reservar-mesa'])
+        break;
     }
   }
   

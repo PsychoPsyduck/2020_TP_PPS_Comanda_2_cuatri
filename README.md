@@ -16,5 +16,26 @@ _Trabajaremos creando una rama en Github para cada uno que luego se uniran para 
 * [Branch-Joaquin](https://github.com/PsychoPsyduck/2020_TP_PPS_Comanda_2_cuatri/tree/joaco-branch)
 * [Branch-Nicolas](https://github.com/PsychoPsyduck/2020_TP_PPS_Comanda_2_cuatri/tree/nico-branch)
 
+## Tareas 📆
+
+_Primer semana - 24/10_
+
+-Creacion del proyecto  - Sande
+-Creacion base de datos - Sande
+-Splash animado e icono - Esposito
+-Ingreso de usuario     - Sande
+-Pagina de inicio       - Esposito
+-Registro de usuarios   - Esposito
+
+_Segunda semana - 31/10_
+
+-Correccion en Registro de usuarios             - Esposito
+-Correccion estilos Registro de usuarios        - Esposito
+-Correccion estilos Ingreso de usuario          - Sande
+-Correccion estilos Pagina de inicio            - Esposito
+-Registro de comidas                            - Sande
+-Registro de mesas                              - Esposito
+-Nuevas paginas para Pedido, Entrega y Reserva  - Sande
+
 ---
 ⌨️ _UTN-FRA_ ⌨️

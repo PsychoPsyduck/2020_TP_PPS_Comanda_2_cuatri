@@ -24,6 +24,18 @@ const routes: Routes = [
   {
     path: 'registro-mesa',
     loadChildren: () => import('./paginas/registro-mesa/registro-mesa.module').then( m => m.RegistroMesaPageModule)
+  },
+  {
+    path: 'envio-domicilio',
+    loadChildren: () => import('./paginas/envio-domicilio/envio-domicilio.module').then( m => m.EnvioDomicilioPageModule)
+  },
+  {
+    path: 'pedir-mesa',
+    loadChildren: () => import('./paginas/pedir-mesa/pedir-mesa.module').then( m => m.PedirMesaPageModule)
+  },
+  {
+    path: 'reservar-mesa',
+    loadChildren: () => import('./paginas/reservar-mesa/reservar-mesa.module').then( m => m.ReservarMesaPageModule)
   }
 
 
