@@ -42,7 +42,7 @@ export class RegistroPlatoPage implements OnInit {
   }
 
   crear(){
-    const { nombre, descripcion, precio, tipo, dni, cuil, perfil, img } = this.form.value;
+    const { nombre, descripcion, precio, tipo, img } = this.form.value;
 
     let plato = {
       nombre: nombre,

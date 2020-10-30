@@ -18,6 +18,9 @@ export class HomePage {
       case "registroPlato":
           this.router.navigate(['/registro-plato'])
         break;
+      case "registroMesa":
+          this.router.navigate(['/registro-mesa'])
+        break;
     }
   }
 

@@ -41,26 +41,26 @@ export class LoginPage implements OnInit {
     }).catch(err => this.presentAlert(err));
   }
 
-  Registrar() {
-    const { mail, clave } = this.form.value;
+  // Registrar() {
+  //   const { mail, clave } = this.form.value;
 
-    this.authService.register(mail, clave).then(res => {
-      this.router.navigate(['/login'])
-    }).catch(err => this.presentAlert(err));
-  }
+  //   this.authService.register(mail, clave).then(res => {
+  //     this.router.navigate(['/login'])
+  //   }).catch(err => this.presentAlert(err));
+  // }
 
-  crear(){
-    const { mail, clave } = this.form.value;
+  // crear(){
+  //   const { mail, clave } = this.form.value;
 
-    let usuario = {
-      mail: mail,
-      pass: clave
-    }
+  //   let usuario = {
+  //     mail: mail,
+  //     pass: clave
+  //   }
 
-    this.dataService.crear("usuarios", usuario).then(res => {
-      console.log("llega bien perri")
-    }).catch(err => console.log(err));;
-  }
+  //   this.dataService.crear("usuarios", usuario).then(res => {
+  //     console.log("llega bien perri")
+  //   }).catch(err => console.log(err));;
+  // }
 
   Limpiar(){
     this.form.setValue({

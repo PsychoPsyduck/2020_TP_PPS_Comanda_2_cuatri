@@ -20,6 +20,10 @@ const routes: Routes = [
   },  {
     path: 'registro-plato',
     loadChildren: () => import('./paginas/registro-plato/registro-plato.module').then( m => m.RegistroPlatoPageModule)
+  },
+  {
+    path: 'registro-mesa',
+    loadChildren: () => import('./paginas/registro-mesa/registro-mesa.module').then( m => m.RegistroMesaPageModule)
   }
 
 
