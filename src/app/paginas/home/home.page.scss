@@ -27,6 +27,7 @@
 }
 .fondo{
   --background: url('../../../assets/img/fondoHome.jpg');
+// --background:white; 
 }
 .container{
   width: 100%;
@@ -39,11 +40,30 @@
   align-items: center;
 }
 .cards{
-  width: 70%;
-  height: 30%;
+  width: 60%;
+  height: 20%;
   background-color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  word-wrap: break-word;
   border-radius: 0.5rem;
-  -webkit-box-shadow: 2px 6px 25px -1px rgba(0,0,0,0.75);
--moz-box-shadow: 2px 6px 25px -1px rgba(0,0,0,0.75);
-box-shadow: 2px 6px 25px -1px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 26px 55px -16px rgba(13,13,13,1);
+  -moz-box-shadow: 10px 26px 55px -16px rgba(13,13,13,1);
+  box-shadow: 10px 26px 55px -16px rgba(13,13,13,1);
+  
+}
+
+.label{
+  color: rgb(143, 12, 12);
+  margin-top: 2rem;
+ // position: absolute;
+  font-size: 1rem;
+  font-weight: 800;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  
 }
