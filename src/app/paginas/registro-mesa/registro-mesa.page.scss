@@ -1,17 +1,15 @@
-/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
+.tarj{
+    
+    --background:black;
+    -webkit-box-shadow: 10px 26px 55px -16px rgba(13,13,13,1);
+    -moz-box-shadow: 10px 26px 55px -16px rgba(13,13,13,1);
+     box-shadow: 10px 26px 55px -16px rgba(13,13,13,1);
 
-.example-header-image {
-    background-size: cover;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
+.fondo{
 
-ion-content {
-    margin: 2em auto;
-    text-align: center;
+    --background:white;
 }
-
 ion-content ion-toolbar {
     border-radius: 10px;
     width: 88%;
@@ -26,5 +24,5 @@ ion-content ion-toolbar {
     margin-right: -50%;
     transform: translate(-50%, -50%);
 
-    --background: rgb(192, 190, 190);
+    --background:white;
 }
