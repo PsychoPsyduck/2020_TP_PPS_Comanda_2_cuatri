@@ -7,10 +7,8 @@
   </ion-toolbar>
 </ion-header>
 
-<br>
-
-<ion-content>
-  <ion-toolbar>
+<ion-content style="--background:white">
+  <ion-toolbar class="tarj" style="--background:black;">
     <ion-title>Comida</ion-title>
     <br>
     <form [formGroup]="form" >
@@ -48,7 +46,7 @@
         <ion-input type="text" formControlName="img"></ion-input> 
       </ion-item>
       <br>
-      <ion-button [hidden]="ocultarVerificar"  color='secondary' *ngIf="logeando"  (click)="crear()">Crear</ion-button>
+      <ion-button style="width: 50%;" [hidden]="ocultarVerificar"  color='secondary' *ngIf="logeando"  (click)="crear()">Crear</ion-button>
       <!-- <ion-button [hidden]="!ocultarVerificar" color="secondary" *ngIf="logeando"  (click)="Entrar()"><i class="fa fa-spinner fa-spin"></i> Ingresando</ion-button> -->
       
     </form>
