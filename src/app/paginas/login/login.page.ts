@@ -80,13 +80,6 @@ export class LoginPage implements OnInit {
     await alert.present();
   }
 
-  Invitado() {
-    this.form.setValue({
-      mail: "admin@mail.com",
-      clave: "adminmail"
-    });
-  }
-
   AutoLog(usuario) {
     switch (usuario) {
       case "jefe" :
