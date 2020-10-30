@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { DataService } from 'src/app/servicios/data.service';
+import { UsuarioService } from 'src/app/servicios/usuario.service';
 
 @Component({
   selector: 'app-registro-adm',
@@ -28,6 +29,7 @@ export class RegistroAdmPage implements OnInit {
   constructor(private fb: FormBuilder, 
               private authService: AuthService, 
               private dataService: DataService,
+              private usuarioService: UsuarioService,
               public router: Router, 
               public alertController: AlertController) { }
 
@@ -59,10 +61,8 @@ export class RegistroAdmPage implements OnInit {
     }
 
     if (this.form.valid) {
-      this.authService.register(usuario.mail, usuario.pass).then(res => {
-        this.dataService.crear("usuarios", usuario).then(res => {
-          console.log("llega bien perri")
-        }).catch(err => console.log(err));;
+      this.authService.register(usuario.mail, usuario.pass, usuario).then(res => {
+          console.log("llega bien perri");
       }).catch(err => console.log(err));;
     }
   }

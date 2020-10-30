@@ -6,12 +6,12 @@ import { AuthService } from 'src/app/servicios/auth.service';
 import { DataService } from 'src/app/servicios/data.service';
 
 @Component({
-  selector: 'app-registro-plato',
-  templateUrl: './registro-plato.page.html',
-  styleUrls: ['./registro-plato.page.scss'],
+  selector: 'app-registro-mesa',
+  templateUrl: './registro-mesa.page.html',
+  styleUrls: ['./registro-mesa.page.scss'],
 })
-export class RegistroPlatoPage implements OnInit {
-  
+export class RegistroMesaPage implements OnInit {
+
   form: FormGroup;
   logeando=true;
   ocultarVerificar: boolean;
