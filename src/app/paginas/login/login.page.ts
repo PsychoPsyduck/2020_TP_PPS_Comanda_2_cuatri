@@ -91,26 +91,32 @@ export class LoginPage implements OnInit {
     switch (usuario) {
       case "jefe" :
         this.form.setValue({
-          mail: "dueño@dueño.com",
-          clave: "111111"
+          mail: "dueño@mail.com",
+          clave: "123456"
+        });
+        break;
+      case "super" :
+        this.form.setValue({
+          mail: "supervisor@mail.com",
+          clave: "123456"
         });
         break;
       case "admin" :
         this.form.setValue({
-          mail: "admin@admin.com",
-          clave: "222222"
+          mail: "administrador@mail.com",
+          clave: "123456"
         });
         break;
       case "empleado" :
         this.form.setValue({
-          mail: "empleado@empleado.com",
-          clave: "333333"
+          mail: "empleado@mail.com",
+          clave: "123456"
         });
         break;
       case "cliente" :
         this.form.setValue({
-          mail: "cliente@cliente.com",
-          clave: "444444"
+          mail: "cliente@mail.com",
+          clave: "123456"
         });
         break;      
     }

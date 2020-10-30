@@ -6,11 +6,11 @@ import { AuthService } from 'src/app/servicios/auth.service';
 import { DataService } from 'src/app/servicios/data.service';
 
 @Component({
-  selector: 'app-registro-adm',
-  templateUrl: './registro-adm.page.html',
-  styleUrls: ['./registro-adm.page.scss'],
+  selector: 'app-registro-plato',
+  templateUrl: './registro-plato.page.html',
+  styleUrls: ['./registro-plato.page.scss'],
 })
-export class RegistroAdmPage implements OnInit {
+export class RegistroPlatoPage implements OnInit {
   
   form: FormGroup;
   logeando=true;
@@ -34,35 +34,27 @@ export class RegistroAdmPage implements OnInit {
   ngOnInit() {
     this.form = this.fb.group({
       nombre: ['', Validators.required],
-      apellido: ['', Validators.required],
-      mail: ['', Validators.required],
-      clave: ['', Validators.required],
-      dni: ['', Validators.required],
-      cuil: ['', Validators.required],
-      perfil: ['', Validators.required],
+      descripcion: ['', Validators.required],
+      precio: ['', Validators.required],
+      tipo: ['', Validators.required],
       img: ['', Validators.required]
     });
   }
 
   crear(){
-    const { nombre, apellido, mail, clave, dni, cuil, perfil, img } = this.form.value;
+    const { nombre, descripcion, precio, tipo, dni, cuil, perfil, img } = this.form.value;
 
-    let usuario = {
+    let plato = {
       nombre: nombre,
-      apellido: apellido,
-      mail: mail,
-      pass: clave,
-      dni: dni,
-      cuil: cuil,
-      perfil: perfil,
+      descripcion: descripcion,
+      precio: precio,
+      tipo: tipo,
       img: img
     }
 
     if (this.form.valid) {
-      this.authService.register(usuario.mail, usuario.pass).then(res => {
-        this.dataService.crear("usuarios", usuario).then(res => {
-          console.log("llega bien perri")
-        }).catch(err => console.log(err));;
+      this.dataService.crear("platos", plato).then(res => {
+        console.log("llega bien perri")
       }).catch(err => console.log(err));;
     }
   }

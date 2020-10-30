@@ -17,7 +17,11 @@ const routes: Routes = [
   {
     path: 'registro-adm',
     loadChildren: () => import('./paginas/registro-adm/registro-adm.module').then( m => m.RegistroAdmPageModule)
+  },  {
+    path: 'registro-plato',
+    loadChildren: () => import('./paginas/registro-plato/registro-plato.module').then( m => m.RegistroPlatoPageModule)
   }
+
 
 ];
 
