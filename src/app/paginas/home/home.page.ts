@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/servicios/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  constructor(public router: Router) {}
+  constructor(public router: Router,private auth:AuthService) {}
 
   ruteador(opcion) {
     switch (opcion) {
@@ -20,5 +21,15 @@ export class HomePage {
         break;
     }
   }
-
+  
+  prueba()
+  { 
+    console.log(this.auth.getCurrentUserId());
+  
+  }
+  logOut()
+  {
+    this.auth.logOut();
+    this.router.navigated['./login.page']
+  }
 }

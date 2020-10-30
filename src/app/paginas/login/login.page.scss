@@ -7,9 +7,11 @@
     margin-right: auto;
 }
 
-ion-content {
+.fondo {
     margin: 2em auto;
     text-align: center;
+    --background: url('../../../assets/img/fondoHome.jpg');
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 ion-content ion-toolbar {
@@ -26,5 +28,5 @@ ion-content ion-toolbar {
     margin-right: -50%;
     transform: translate(-50%, -50%);
 
-    --background: rgb(192, 190, 190);
+    --background: black;
 }
