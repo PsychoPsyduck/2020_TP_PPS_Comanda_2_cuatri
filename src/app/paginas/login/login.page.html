@@ -1,22 +1,20 @@
-<ion-header>
+<ion-header >
   <ion-toolbar color='primary'>
-    <ion-title text-center>La Comanda</ion-title>
+    <ion-title style="text-align: center; font-family:Georgia, 'Times New Roman', Times, serif; " text-center>La Comanda</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<br>
-
-<ion-content>
+<ion-content class="fondo">
   <ion-toolbar>
-    <ion-title>Iniciar Sesión</ion-title>
+    <ion-title style="font-family:Georgia, 'Times New Roman', Times, serif;">Iniciar Sesión</ion-title>
     <br>
     <form [formGroup]="form" >
-      <ion-item class="full-width-input">
+      <ion-item style="border-radius: 2rem;" class="full-width-input">
         <ion-label position='floating'>Correo</ion-label>
-        <ion-input type="text" formControlName="mail"></ion-input> 
+        <ion-input  type="text" formControlName="mail"></ion-input> 
       </ion-item>
       <br>
-      <ion-item class="full-width-input">
+      <ion-item style="border-radius: 2rem;" class="full-width-input">
         <ion-label position='floating'>Contraseña</ion-label>
         <ion-input type="password" formControlName="clave"></ion-input> 
       </ion-item>
