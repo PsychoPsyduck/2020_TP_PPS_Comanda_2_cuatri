@@ -33,27 +33,25 @@ export class RegistroMesaPage implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
-      nombre: ['', Validators.required],
-      descripcion: ['', Validators.required],
-      precio: ['', Validators.required],
+      numero: ['', Validators.required],
+      cantidad: ['', Validators.required],
       tipo: ['', Validators.required],
       img: ['', Validators.required]
     });
   }
 
   crear(){
-    const { nombre, descripcion, precio, tipo, img } = this.form.value;
+    const { numero, cantidad, tipo, img } = this.form.value;
 
     let plato = {
-      nombre: nombre,
-      descripcion: descripcion,
-      precio: precio,
+      numero: numero,
+      cantidad: cantidad,
       tipo: tipo,
       img: img
     }
 
     if (this.form.valid) {
-      this.dataService.crear("platos", plato).then(res => {
+      this.dataService.crear("mesas", plato).then(res => {
         console.log("llega bien perri")
       }).catch(err => console.log(err));;
     }

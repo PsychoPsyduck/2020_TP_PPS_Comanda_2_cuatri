@@ -11,22 +11,17 @@
 
 <ion-content>
   <ion-toolbar>
-    <ion-title>Comida</ion-title>
+    <ion-title>Mesa</ion-title>
     <br>
     <form [formGroup]="form" >
       <ion-item class="full-width-input">
-        <ion-label position='floating'>Nombre</ion-label>
-        <ion-input type="text" formControlName="nombre"></ion-input> 
+        <ion-label position='floating'>Numero</ion-label>
+        <ion-input type="number" formControlName="numero"></ion-input> 
       </ion-item>
       <br>
       <ion-item class="full-width-input">
-        <ion-label position='floating'>Descripcion</ion-label>
-        <ion-input type="text" formControlName="descripcion"></ion-input> 
-      </ion-item>
-      <br>
-      <ion-item class="full-width-input">
-        <ion-label position='floating'>Precio</ion-label>
-        <ion-input type="number" formControlName="precio"></ion-input> 
+        <ion-label position='floating'>Cantidad Comenzales</ion-label>
+        <ion-input type="number" formControlName="cantidad"></ion-input> 
       </ion-item>
       <br>
       <ion-item class="full-width-input">
