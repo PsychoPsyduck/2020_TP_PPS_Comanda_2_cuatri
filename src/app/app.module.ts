@@ -27,6 +27,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage'
 import { AngularFireDatabaseModule } from '@angular/fire/database'
 
+//QR 
+import { BarcodeScanner } from "@ionic-native/barcode-scanner/ngx";
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -46,7 +49,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database'
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    BarcodeScanner
   ],
   bootstrap: [AppComponent]
 })

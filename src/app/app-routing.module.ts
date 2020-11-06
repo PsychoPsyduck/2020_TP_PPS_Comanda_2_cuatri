@@ -36,6 +36,10 @@ const routes: Routes = [
   {
     path: 'reservar-mesa',
     loadChildren: () => import('./paginas/reservar-mesa/reservar-mesa.module').then( m => m.ReservarMesaPageModule)
+  },
+  {
+    path: 'registro-cliente',
+    loadChildren: () => import('./paginas/registro-cliente/registro-cliente.module').then( m => m.RegistroClientePageModule)
   }
 
 
