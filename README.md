@@ -37,5 +37,11 @@ _Segunda semana - 31/10_
 -Registro de mesas                              - Esposito
 -Nuevas paginas para Pedido, Entrega y Reserva  - Sande
 
+_Tercer semana - 7/11_
+-Escaneo de DNI registgro de Usuario            -Esposito
+-Corrección de estilos en Login                 -Sande 
+-Estilos de Registro de cliente                 -Esposito
+-Servicio de Registro de cliente                -Sande 
+
 ---
 ⌨️ _UTN-FRA_ ⌨️
