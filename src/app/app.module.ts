@@ -30,13 +30,22 @@ import { AngularFireDatabaseModule } from '@angular/fire/database'
 //QR 
 import { BarcodeScanner } from "@ionic-native/barcode-scanner/ngx";
 
+//alertas
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ 
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
     HttpClientModule,
+    CommonModule,
     BrowserModule, 
+    BrowserAnimationsModule,
     FormsModule,
+    ToastrModule.forRoot(),
     ReactiveFormsModule,
     IonicModule.forRoot(), 
     AppRoutingModule,
