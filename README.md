@@ -42,6 +42,7 @@ _Tercer semana - 7/11_
 -Corrección de estilos en Login                 -Sande 
 -Estilos de Registro de cliente                 -Esposito
 -Servicio de Registro de cliente                -Sande 
+-Estilos de Alertas                             -Esposito
 
 
 ---
