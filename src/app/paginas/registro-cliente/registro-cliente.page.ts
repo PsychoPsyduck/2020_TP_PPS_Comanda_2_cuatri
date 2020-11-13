@@ -66,6 +66,7 @@ export class RegistroClientePage implements OnInit {
       dni: dni,
       perfil:perfil,
       cuil: cuil,
+      estado:0
      // img: img
     }
 

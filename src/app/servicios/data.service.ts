@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { AngularFirestore, DocumentChangeAction, DocumentReference, QueryFn } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection, DocumentChangeAction, DocumentReference, QueryFn } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { ToastController } from '@ionic/angular';
 import { Observable } from 'rxjs';
@@ -9,13 +9,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-
+  
+  dbUsersRef:AngularFirestoreCollection<any>;
   constructor(
     public http: HttpClient,
     public db: AngularFirestore,
     public afs: AngularFireStorage,
     public toastController: ToastController
-  ) {}
+  ) {
+    this.dbUsersRef = this.db.collection("usuarios");
+  }
 
   traerColeccion(path: string, query: QueryFn = null): Observable<DocumentChangeAction<unknown>[]> {
     if(query == null)
@@ -79,6 +82,11 @@ export class DataService {
   handleError(error) {
     this.mostrarToast(error);
   }
+    
+  getUserByUid(uid: string) {
+    return this.dbUsersRef.doc(uid).valueChanges();
+  }
+ 
 
   // subirImagenYTraerURl(path: string, imagenBase64: string): Promise<any> {
   //   let picData = ManejarDatosFoto(imagenBase64);

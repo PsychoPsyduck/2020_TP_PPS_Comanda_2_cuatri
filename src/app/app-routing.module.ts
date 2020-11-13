@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {
@@ -12,12 +13,14 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./paginas/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./paginas/home/home.module').then( m => m.HomePageModule),
+    canActivate:[LoginGuard]
   },
   {
     path: 'registro-adm',
     loadChildren: () => import('./paginas/registro-adm/registro-adm.module').then( m => m.RegistroAdmPageModule)
-  },  {
+  },
+  {
     path: 'registro-plato',
     loadChildren: () => import('./paginas/registro-plato/registro-plato.module').then( m => m.RegistroPlatoPageModule)
   },
@@ -40,6 +43,14 @@ const routes: Routes = [
   {
     path: 'registro-cliente',
     loadChildren: () => import('./paginas/registro-cliente/registro-cliente.module').then( m => m.RegistroClientePageModule)
+  },
+  {
+    path: 'verificacion',
+    loadChildren: () => import('./paginas/verificacion/verificacion.module').then( m => m.VerificacionPageModule)
+  },
+  {
+    path: 'cliente-espera',
+    loadChildren: () => import('./paginas/cliente-espera/cliente-espera.module').then( m => m.ClienteEsperaPageModule)
   }
 
 
