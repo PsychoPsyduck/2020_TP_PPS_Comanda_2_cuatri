@@ -41,6 +41,11 @@ export class LoginPage implements OnInit {
     }).catch(err => this.presentAlert(err));
   }
 
+  registrar()
+  {
+    this.router.navigate(['/registro-cliente']);
+  }
+
   // Registrar() {
   //   const { mail, clave } = this.form.value;
 
