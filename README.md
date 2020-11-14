@@ -2,7 +2,7 @@
 
 Trabajo práctico - Práctica Profesional Supervisada
 
-<img src="src/assets/img/gif-splash.gif" alt="">
+<img src="/src/assets/img/gif-splash.gif" alt="">
 
 _Este proyecto fue generado con Ionic versión 5.0.0_
 
