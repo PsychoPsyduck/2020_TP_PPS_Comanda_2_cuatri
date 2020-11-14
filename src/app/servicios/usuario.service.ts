@@ -20,7 +20,19 @@ export class UsuarioService {
     console.log('Entro al crearUsuario');
     console.log('objeto', objeto);
     return new Promise((resolve,reject) => {​​​​
-      this.db.collection("usuarios").doc(uid).set(objeto).then(res => {
+      this.db.collection("usuarios").doc(uid).set({
+        uid:uid,
+        nombre: objeto.nombre,
+        apellido: objeto.apellido,
+        mail: objeto.mail,
+        pass: objeto.clave,
+        dni: objeto.dni,
+        perfil:objeto.perfil,
+        cuil: objeto.cuil,
+        estado:0,
+        img: objeto.img
+        
+        }).then(res => {
         console.log('Llega bien perri');
       }).catch(err => console.log(err));
     });

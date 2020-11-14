@@ -51,6 +51,10 @@ const routes: Routes = [
   {
     path: 'cliente-espera',
     loadChildren: () => import('./paginas/cliente-espera/cliente-espera.module').then( m => m.ClienteEsperaPageModule)
+  },
+  {
+    path: 'lista-autorizar',
+    loadChildren: () => import('./paginas/lista-autorizar/lista-autorizar.module').then( m => m.ListaAutorizarPageModule)
   }
 
 

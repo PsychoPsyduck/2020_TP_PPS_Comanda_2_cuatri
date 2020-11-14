@@ -107,4 +107,23 @@ export class DataService {
     });
     toast.present();
   }
+
+  // async getPendientesAutorizar()
+  // {
+  //      let turnos = [];
+  //     let turnosUfs =  await this.dbUsersRef.ref.where("estado", "==", 0).where("perfil","==","Cliente").get();
+        
+  //     turnosUfs.docs.map(function(x){
+  //       turnos.push(x.data());
+  //   }); 
+
+   
+  //   return turnos;
+
+  // }
+
+  getUsuarios(){
+    return this.dbUsersRef.valueChanges();
+  }
+
 }

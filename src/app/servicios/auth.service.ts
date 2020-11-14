@@ -1,6 +1,7 @@
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase';
 import { ToastrService } from 'ngx-toastr';
@@ -12,7 +13,7 @@ import { UsuarioService } from './usuario.service';
 export class AuthService {
   [x: string]: any;
 
-  constructor(private router: Router, private usuarioService: UsuarioService, private toast:ToastrService,public angularFireAuth:AngularFireAuth,) { } 
+  constructor(private router: Router, private usuarioService: UsuarioService, private toast:ToastrService,public angularFireAuth:AngularFireAuth, private db: AngularFirestore) { } 
 
   async sendVerificationEmail(): Promise<void> {
     return (await this.angularFireAuth.currentUser).sendEmailVerification();
@@ -83,6 +84,15 @@ export class AuthService {
     {
       return false;
     }
+  }
+
+  updateEstadoUsuario(usuario:any,estado:number)
+  { 
+    return  this.db.collection('usuarios').doc(usuario).update({
+      estado: estado,
+      
+    }) 
+
   }
 
   // registerNew(name:string, cuil:number,sexo:string,email:string,password:string)  {​​​​
