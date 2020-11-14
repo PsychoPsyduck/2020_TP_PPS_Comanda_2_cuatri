@@ -6,6 +6,7 @@ import { AlertController } from '@ionic/angular';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { DataService } from 'src/app/servicios/data.service';
+import { FotoService } from 'src/app/servicios/foto.service';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 import { ScanerService } from '../../servicios/scaner.service';
 
@@ -23,7 +24,7 @@ export class RegistroClientePage implements OnInit {
 
   esProfesional = false;
   esAdmin = false;
-
+  aux;
 
   usuarios = [
     {value: 'admin', viewValue: 'Administrador'},
@@ -38,7 +39,8 @@ export class RegistroClientePage implements OnInit {
               private scanner: ScanerService,
               public router: Router, 
               public alertController: AlertController,
-              public toas:ToastrService ) { }
+              public toas:ToastrService,
+              private fotoService: FotoService ) { }
 
   ngOnInit() {
     this.form = this.fb.group({
@@ -49,7 +51,7 @@ export class RegistroClientePage implements OnInit {
       dni: ['', Validators.required],
       cuil: ['', Validators.required],
       perfil: ['', Validators.required],
-     // img: ['', Validators.required]
+      img: ['', Validators.required]
     });
    
   }
@@ -57,7 +59,7 @@ export class RegistroClientePage implements OnInit {
   crear(){
     console.log("llega");
     this.form.controls['perfil'].setValue('Cliente');
-    const { nombre, apellido, mail, clave, dni, cuil, perfil, /*img */} = this.form.value;
+    const { nombre, apellido, mail, clave, dni, cuil, perfil, img } = this.form.value;
     let usuario = {
       nombre: nombre,
       apellido: apellido,
@@ -66,7 +68,7 @@ export class RegistroClientePage implements OnInit {
       dni: dni,
       perfil:perfil,
       cuil: cuil,
-     // img: img
+      img: img
     }
 
     if (this.form.valid) {
@@ -152,5 +154,37 @@ export class RegistroClientePage implements OnInit {
   }
 
 
+  tomarFoto() {
+    const { nombre, apellido, mail } = this.form.value;
 
+    let usuario = {
+      nombre: nombre,
+      apellido: apellido,
+      mail: mail
+    }
+
+    this.fotoService.takePhoto()
+      .then(imageData => {
+        if (imageData !== 'No Image Selected') {
+          this.subirFoto(imageData, usuario);
+        } else {
+          // this.toastService.errorToast('No tomó la foto.');
+        }
+      })
+      .catch(error => {
+        // this.toastService.errorToast('Error: No se ha podido cargar la foto. ' + error.message);
+      });   
+  }
+
+  subirFoto(imageData, usuario) {
+    this.fotoService.uploadPhoto(imageData, usuario)
+      .then(res => {
+        this.form.controls['img'].setValue(res);
+        this.aux = res;
+        // this.toastService.confirmationToast("Foto guardada")
+      })
+      .catch(err => {
+        // this.toastService.errorToast('Error: No se ha podido guardar la foto. ' + err.message);
+      })
+  }
 }

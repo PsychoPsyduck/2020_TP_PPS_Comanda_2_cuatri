@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { DataService } from 'src/app/servicios/data.service';
+import { FotoService } from 'src/app/servicios/foto.service';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 
 @Component({
@@ -19,6 +20,7 @@ export class RegistroAdmPage implements OnInit {
 
   esProfesional = false;
   esAdmin = false;
+  aux;
 
   usuarios = [
     {value: 'admin', viewValue: 'Administrador'},
@@ -31,7 +33,8 @@ export class RegistroAdmPage implements OnInit {
               private dataService: DataService,
               private usuarioService: UsuarioService,
               public router: Router, 
-              public alertController: AlertController) { }
+              public alertController: AlertController,
+              private fotoService: FotoService) { }
 
   ngOnInit() {
     this.form = this.fb.group({
@@ -77,5 +80,39 @@ export class RegistroAdmPage implements OnInit {
       this.esAdmin = false;
       this.esProfesional = true
     }
+  }
+
+  tomarFoto() {
+    const { nombre, apellido, mail } = this.form.value;
+
+    let usuario = {
+      nombre: nombre,
+      apellido: apellido,
+      mail: mail
+    }
+
+    this.fotoService.takePhoto()
+      .then(imageData => {
+        if (imageData !== 'No Image Selected') {
+          this.subirFoto(imageData, usuario);
+        } else {
+          // this.toastService.errorToast('No tomó la foto.');
+        }
+      })
+      .catch(error => {
+        // this.toastService.errorToast('Error: No se ha podido cargar la foto. ' + error.message);
+      });   
+  }
+
+  subirFoto(imageData, usuario) {
+    this.fotoService.uploadPhoto(imageData, usuario)
+      .then(res => {
+        this.form.controls['img'].setValue(res);
+        this.aux = res;
+        // this.toastService.confirmationToast("Foto guardada")
+      })
+      .catch(err => {
+        // this.toastService.errorToast('Error: No se ha podido guardar la foto. ' + err.message);
+      })
   }
 }
