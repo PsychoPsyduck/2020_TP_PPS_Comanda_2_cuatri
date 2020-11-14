@@ -68,7 +68,8 @@ export class RegistroClientePage implements OnInit {
       dni: dni,
       perfil:perfil,
       cuil: cuil,
-      img: img
+      img: img,
+      estado:0
     }
 
     if (this.form.valid) {

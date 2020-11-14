@@ -37,6 +37,7 @@ export class LoginPage implements OnInit {
     const { mail, clave } = this.form.value;
 
     this.authService.login(mail, clave).then( res => {
+      
       this.router.navigate(['/home']);
     }).catch(err => this.presentAlert(err));
   }

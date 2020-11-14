@@ -34,6 +34,9 @@ export class HomePage {
       case "menu":
           this.router.navigate(['/menu'])
         break;
+      case "lista-autorizar":
+          this.router.navigate(['/lista-autorizar']);
+        break;
     }
   }
   
