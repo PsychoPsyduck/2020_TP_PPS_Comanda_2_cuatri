@@ -20,28 +20,40 @@ _Trabajaremos creando una rama en Github para cada uno que luego se uniran para 
 
 _Primer semana - 24/10_
 
--Creacion del proyecto  - Sande
--Creacion base de datos - Sande
--Splash animado e icono - Esposito
--Ingreso de usuario     - Sande
--Pagina de inicio       - Esposito
--Registro de usuarios   - Esposito
+-Creacion del proyecto  - Sande<br>
+-Creacion base de datos - Sande<br>
+-Splash animado e icono - Esposito<br>
+-Ingreso de usuario     - Sande<br>
+-Pagina de inicio       - Esposito<br>
+-Registro de usuarios   - Esposito<br>
 
 _Segunda semana - 31/10_
 
--Correccion en Registro de usuarios             - Esposito
--Correccion estilos Registro de usuarios        - Esposito
--Correccion estilos Ingreso de usuario          - Sande
--Correccion estilos Pagina de inicio            - Esposito
--Registro de comidas                            - Sande
--Registro de mesas                              - Esposito
--Nuevas paginas para Pedido, Entrega y Reserva  - Sande
+-Correccion en Registro de usuarios             - Esposito<br>
+-Correccion estilos Registro de usuarios        - Esposito<br>
+-Correccion estilos Ingreso de usuario          - Sande<br>
+-Correccion estilos Pagina de inicio            - Esposito<br>
+-Registro de comidas                            - Sande<br>
+-Registro de mesas                              - Esposito<br>
+-Nuevas paginas para Pedido, Entrega y Reserva  - Sande<br>
 
 _Tercer semana - 7/11_
--Escaneo de DNI registgro de Usuario            -Esposito
--Corrección de estilos en Login                 -Sande 
--Estilos de Registro de cliente                 -Esposito
--Servicio de Registro de cliente                -Sande 
+
+-Escaneo de DNI registro de Usuario             -Esposito<br>
+-Corrección estilos en Login                    -Sande<br>
+-Estilos de Registro de cliente                 -Esposito<br>
+-Servicio de Registro de cliente                -Sande<br>
+
+_Cuarta semana - 14/11_
+
+-Correccion estilos Registro Cliente            -Esposito<br>
+-Verificacion de correo autorizado              -Esposito<br>
+-Nueva pagina verificacion de usuario           -Esposito<br>
+-Lista Usuarios Pendientes                      -Esposito<br>
+-Manejo de imagen Alta de Usuario               -Sande<br>
+-Manejo de imagen Alta de Plato                 -Sande<br>
+-Nueva pagina de Menu                           -Sande<br>
+-Seleccion de pedido                            -Sande<br>
 
 ---
 ⌨️ _UTN-FRA_ ⌨️
