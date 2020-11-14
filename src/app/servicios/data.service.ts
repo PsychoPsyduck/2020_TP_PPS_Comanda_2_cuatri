@@ -39,6 +39,10 @@ export class DataService {
       });
   }
 
+  getAll(path:string) {
+    return this.db.collection(path).valueChanges();
+  }
+
   public crear(path: string, objeto: any): Promise<DocumentReference> {
     console.log('Entro al crear');
     console.log('path', path);

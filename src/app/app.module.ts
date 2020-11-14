@@ -40,9 +40,11 @@ import { ToastrModule } from 'ngx-toastr';
 import { Camera } from '@ionic-native/camera/ngx';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 
+import { PedidoComponent } from '../app/componentes/pedido/pedido.component';
+
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [AppComponent, PedidoComponent],
+  entryComponents: [PedidoComponent],
   imports: [
     HttpClientModule,
     CommonModule,

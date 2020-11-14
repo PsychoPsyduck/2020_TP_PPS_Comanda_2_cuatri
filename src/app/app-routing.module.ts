@@ -40,6 +40,10 @@ const routes: Routes = [
   {
     path: 'registro-cliente',
     loadChildren: () => import('./paginas/registro-cliente/registro-cliente.module').then( m => m.RegistroClientePageModule)
+  },
+  {
+    path: 'menu',
+    loadChildren: () => import('./paginas/menu/menu.module').then( m => m.MenuPageModule)
   }
 
 

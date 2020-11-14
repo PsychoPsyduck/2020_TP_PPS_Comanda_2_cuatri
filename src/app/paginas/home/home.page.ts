@@ -31,6 +31,9 @@ export class HomePage {
       case "reservarMesa":
           this.router.navigate(['/reservar-mesa'])
         break;
+      case "menu":
+          this.router.navigate(['/menu'])
+        break;
     }
   }
   
