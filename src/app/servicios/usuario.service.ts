@@ -25,7 +25,7 @@ export class UsuarioService {
         nombre: objeto.nombre,
         apellido: objeto.apellido,
         mail: objeto.mail,
-        pass: objeto.clave,
+        pass: objeto.pass,
         dni: objeto.dni,
         perfil:objeto.perfil,
         cuil: objeto.cuil,
