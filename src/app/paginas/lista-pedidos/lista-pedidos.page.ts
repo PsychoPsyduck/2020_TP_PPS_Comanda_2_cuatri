@@ -17,7 +17,7 @@ export class ListaPedidosPage implements OnInit {
               private toas: ToastrService) { }
 
   ngOnInit() {
-    this.dataService.getPedidos().subscribe(res=>{
+    this.dataService.getPedidos().subscribe(res=>{ 
       this.lista = res.filter(res => res.estado == 0);
     })
   }

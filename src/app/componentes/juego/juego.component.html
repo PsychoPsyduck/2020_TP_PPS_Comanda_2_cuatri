@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar color='primary'>
+    <ion-buttons slot="start" (click)='closeModal()'>
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title text-center>Juego</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+
+    <h3>A que pelicula pertenece la frase?</h3>
+  
+    <div *ngIf="ganador">
+      <div>
+        <h4>Correcto!</h4>
+        <br>
+      </div>
+    </div>
+    
+    <div *ngIf="perdedor">
+      <div>
+        <h4>Incorrecto!</h4>
+        <br>
+      </div>
+    </div>
+  
+    <div *ngIf="checkTime">
+      <h5>Se acabo el tiempo!</h5>
+    </div>
+  
+    <div>
+      <ion-button color="primary" id="empezar" *ngIf="!respondiendo" (click)="juegoNuevo()">Nuevo Juego</ion-button>
+    </div>
+  
+    <div *ngIf="respondiendo">
+      <h5>Tiempo: {{tiempo}}</h5>
+    </div>
+    
+    <div class="typewriter" *ngIf="respondiendo">
+        <div class="typewriter" [ngClass]="{ 'typewriter-text': respondiendo}">{{fraseRandom.frase}}</div>
+    </div>
+  
+    <div class="row" *ngIf="respondiendo">
+      <div class="col-lg-4" >
+          <ion-button (click)="responder(fraseRandom.opciones[0])" >{{fraseRandom.opciones[0]}}</ion-button>
+      </div>
+      <div class="col-lg-4">
+          <ion-button (click)="responder(fraseRandom.opciones[1])" >{{fraseRandom.opciones[1]}}</ion-button>
+      </div>
+      <div class="col-lg-4">
+          <ion-button (click)="responder(fraseRandom.opciones[2])" >{{fraseRandom.opciones[2]}}</ion-button>
+      </div>
+    </div>
+  
+    <br>
+  
+    <div class="row" *ngIf="respondiendo">
+      <div class="col">
+          <ion-button (click)="terminar()">Terminar</ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>
+

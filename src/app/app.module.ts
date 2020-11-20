@@ -45,10 +45,11 @@ import { PedidoComponent } from '../app/componentes/pedido/pedido.component';
 
 //fcm
 import { FcmService } from "../app/servicios/fcm.service";
+import { JuegoComponent } from './componentes/juego/juego.component';
 
 
 @NgModule({
-  declarations: [AppComponent, PedidoComponent],
+  declarations: [AppComponent, PedidoComponent, JuegoComponent],
   entryComponents: [PedidoComponent],
   imports: [
     HttpClientModule,

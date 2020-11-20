@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/servicios/auth.service';
-import { NavController, ToastController } from '@ionic/angular';
+import { ModalController, NavController, ToastController } from '@ionic/angular';
 import { FcmService } from 'src/app/servicios/fcm.service';
 import { tap } from "rxjs/operators";
+import { JuegoComponent } from 'src/app/componentes/juego/juego.component';
 
 
 @Component({
@@ -15,7 +16,12 @@ export class HomePage implements OnInit {
 
 
 
-  constructor(public router: Router,private auth:AuthService,private nav:NavController,private fcm:FcmService,public toasControl:ToastController) {}
+  constructor(public router: Router,
+              private auth:AuthService,
+              private nav:NavController,
+              private fcm:FcmService,
+              public toasControl:ToastController,
+              private modal: ModalController) {}
   
   // ionViewDidLoad(){
   //  this.fcm.token()
@@ -66,7 +72,24 @@ export class HomePage implements OnInit {
       case "lista-pedidos":
           this.router.navigate(['/lista-pedidos']);
         break;
+      case "juego":
+        this.openModal();
+        break;
     }
+  }
+
+  openModal() {
+    this.modal.create({
+      component: JuegoComponent,
+      componentProps: {
+        // pedido: this.items
+      }
+    }).then((modal) => {
+      //abre el modal si hay por lo menos un item seleccionado
+      if(true) {
+        modal.present();
+      }
+    });
   }
   
   prueba()
@@ -74,6 +97,7 @@ export class HomePage implements OnInit {
     console.log(this.auth.getCurrentUserId());
   
   }
+
   logOut()
   {
     this.auth.logOut();
