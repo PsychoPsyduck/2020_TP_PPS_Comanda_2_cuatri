@@ -6,14 +6,18 @@ import { Router } from '@angular/router';
 import * as firebase from 'firebase';
 import { ToastrService } from 'ngx-toastr';
 import { UsuarioService } from './usuario.service';
+import { HttpClient } from "@angular/common/http";
+import { Platform } from '@ionic/angular';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   [x: string]: any;
-
-  constructor(private router: Router, private usuarioService: UsuarioService, private toast:ToastrService,public angularFireAuth:AngularFireAuth, private db: AngularFirestore) { } 
+ 
+  rutaNotification = "https://fcm.googleapis.com/fcm/send";
+  constructor(private router: Router, private usuarioService: UsuarioService, private toast:ToastrService,public angularFireAuth:AngularFireAuth, private db: AngularFirestore, private http:HttpClient) { } 
 
   async sendVerificationEmail(): Promise<void> {
     return (await this.angularFireAuth.currentUser).sendEmailVerification();
@@ -93,6 +97,41 @@ export class AuthService {
       
     }) 
 
+  }
+
+  prueba()
+  {
+    console.log("dale que tiene que llegar");
+  }
+
+  registrar(token:any,title:string,cuerpo:string,image?:string) {
+
+    console.log("hola");
+   /* let body = notificacion:{
+      title: "Prueba post desde angular",
+      body: "Funciona piola perri"
+      }*/
+    let body ={
+        "notification":{
+            "title": title,
+            "body": cuerpo,
+            "image":image,
+    
+        },
+        "to":"dYMXr1MLTQetBD39hSUR4B:APA91bFCFeJ2TkMGtfhvd2rZDuLqJaip2TEylJHCw_tXVzFkKnwyhvZ-X6ztBXINBjSZMS0N64Sd0L80FPJe3zu-45cuSV7rUn-hqHxtqIp3TNmfMqGTrbBJxrjmm3qFAqg2kFlHr61i"
+    }
+
+
+   let headers = {
+      headers:{
+
+        Authorization: 'Bearer ' + "AAAA_80FmeU:APA91bGUBHOqlTtiMO7VkRKrN9oLa8jPFh8a4MjC0T9TWIFg1CQjoYqDlzQ_CaiERFcoTsAVawTFdsmz4pBIXl5z9eDBNPlxTDB9Au_YUU1ANICambSYjjqWG43--nxogXrb7hWLAMpQ"
+      }
+    } 
+
+    //console.info(body); 
+    
+    return this.http.post(this.rutaNotification,body,headers);
   }
 
   // registerNew(name:string, cuil:number,sexo:string,email:string,password:string)  {​​​​

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1098656356837",
+    "firebase_url": "https://comanda-pps-38e32.firebaseio.com",
+    "project_id": "comanda-pps-38e32",
+    "storage_bucket": "comanda-pps-38e32.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1098656356837:android:49c3bf1fd41d5060eaf70c",
+        "android_client_info": {
+          "package_name": "com.comanda.sandeEsposito"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1098656356837-0rgnh15liqt31pmsj8jdlngmen93ib38.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC809xYYnBt7yqQmJ4Sd6SPTmZD0HjFxaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1098656356837-0rgnh15liqt31pmsj8jdlngmen93ib38.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

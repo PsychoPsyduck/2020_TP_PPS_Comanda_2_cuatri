@@ -19,6 +19,7 @@ export class UsuarioService {
   public crearUsuario(objeto: any, uid: string): Promise<DocumentReference> {
     console.log('Entro al crearUsuario');
     console.log('objeto', objeto);
+    
     return new Promise((resolve,reject) => {​​​​
       this.db.collection("usuarios").doc(uid).set({
         uid:uid,
@@ -30,7 +31,8 @@ export class UsuarioService {
         perfil:objeto.perfil,
         cuil: objeto.cuil,
         estado:0,
-        img: objeto.img
+        img: objeto.img,
+        token:objeto.token,
         
         }).then(res => {
         console.log('Llega bien perri');

@@ -36,11 +36,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
  
 import { ToastrModule } from 'ngx-toastr';
 
+
 //Foto
 import { Camera } from '@ionic-native/camera/ngx';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 
 import { PedidoComponent } from '../app/componentes/pedido/pedido.component';
+
+//fcm
+import { FcmService } from "../app/servicios/fcm.service";
+
 
 @NgModule({
   declarations: [AppComponent, PedidoComponent],
@@ -59,7 +64,8 @@ import { PedidoComponent } from '../app/componentes/pedido/pedido.component';
     AngularFireAuthModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    
   ],
   providers: [
     StatusBar,
@@ -67,7 +73,9 @@ import { PedidoComponent } from '../app/componentes/pedido/pedido.component';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     BarcodeScanner,
     Camera,
-    ImagePicker
+    ImagePicker,
+    FcmService,
+ 
   ],
   bootstrap: [AppComponent]
 })
