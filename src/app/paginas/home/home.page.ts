@@ -1,15 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/servicios/auth.service';
+import { NavController, ToastController } from '@ionic/angular';
+import { FcmService } from 'src/app/servicios/fcm.service';
+import { tap } from "rxjs/operators";
+
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
-  constructor(public router: Router,private auth:AuthService) {}
+
+
+  constructor(public router: Router,private auth:AuthService,private nav:NavController,private fcm:FcmService,public toasControl:ToastController) {}
+  
+  // ionViewDidLoad(){
+  //  this.fcm.token()
+  //  this.fcm.listenToNotification().pipe(
+  //    tap(msg=>{
+  //      const toast =  this.toasControl.create({
+  //        message: msg.body,
+  //        duration: 3000
+  //      });
+  //      toast.then(res=>{
+  //        res.present();
+  //      }) 
+  //    })
+  //  )
+  // }
+  ngOnInit(): void {
+    
+  }
+
+ 
 
   ruteador(opcion) {
     switch (opcion) {

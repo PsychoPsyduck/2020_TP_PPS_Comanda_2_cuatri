@@ -9,6 +9,14 @@ import { DataService } from 'src/app/servicios/data.service';
 import { FotoService } from 'src/app/servicios/foto.service';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 import { ScanerService } from '../../servicios/scaner.service';
+import {
+  Plugins,
+  PushNotification,
+  PushNotificationToken,
+  PushNotificationActionPerformed,
+} from '@capacitor/core';
+
+const { PushNotifications } = Plugins;
 
 @Component({
   selector: 'app-registro-cliente',
@@ -56,35 +64,62 @@ export class RegistroClientePage implements OnInit {
    
   }
 
+
+
   crear(){
-    console.log("llega");
-    this.form.controls['perfil'].setValue('Cliente');
-    const { nombre, apellido, mail, clave, dni, cuil, perfil, img } = this.form.value;
-    let usuario = {
-      nombre: nombre,
-      apellido: apellido,
-      mail: mail,
-      pass: clave,
-      dni: dni,
-      perfil:perfil,
-      cuil: cuil,
-      img: img,
-      estado:0
-    }
-
-    if (this.form.valid) {
-      this.authService.register(usuario.mail, usuario.pass, usuario).then(res => {
-          //console.log("llega bien perri");
-          this.toas.success("Cliente registrado con éxito");
-
-      }).catch(err => {console.log(err)
-          this.toas.error("Ocurrió un error a la hora del Registro");
-      });;
-    }else
-    {
-      this.toas.error("Datos inválidos");
-
-    }
+   
+    let tokenA :any;
+    PushNotifications.requestPermission().then( result => {
+      if (result.granted) {
+        // Register with Apple / Google to receive push via APNS/FCM
+        PushNotifications.register();
+      } else {
+        // Show some error
+      }
+    });
+    
+    // On success, we should be able to receive notifications
+    PushNotifications.addListener('registration',
+    (token: PushNotificationToken) => {
+     //  alert('Push registration success, token: ' + token.value);
+        console.log('Push registration success, token: ')
+        console.log(token.value);
+        tokenA = token.value;
+        console.log("envio de notificacion");
+        console.log("llega");
+        this.form.controls['perfil'].setValue('Cliente');
+        const { nombre, apellido, mail, clave, dni, cuil, perfil, img } = this.form.value;
+        let usuario = {
+          nombre: nombre,
+          apellido: apellido,
+          mail: mail,
+          pass: clave,
+          dni: dni,
+          perfil:perfil,
+          cuil: cuil,
+          img: img,
+          estado:0,
+          token: tokenA,
+        }
+    
+        if (this.form.valid) {
+          this.authService.register(usuario.mail, usuario.pass, usuario).then(res => {
+              //console.log("llega bien perri");
+              this.toas.success("Cliente registrado con éxito");
+              this.authService.registrar("dYMXr1MLTQetBD39hSUR4B:APA91bFCFeJ2TkMGtfhvd2rZDuLqJaip2TEylJHCw_tXVzFkKnwyhvZ-X6ztBXINBjSZMS0N64Sd0L80FPJe3zu-45cuSV7rUn-hqHxtqIp3TNmfMqGTrbBJxrjmm3qFAqg2kFlHr61i","Nuevo usuario","Confirmar Usuario",usuario.img).toPromise().then(res =>{
+                console.info(res);
+              })
+    
+          }).catch(err => {console.log(err)
+              this.toas.error("Ocurrió un error a la hora del Registro");
+          });;
+        }else
+        {
+          this.toas.error("Datos inválidos");
+    
+        }
+      }
+    );
   }
 
   seleccionUsuario() {
