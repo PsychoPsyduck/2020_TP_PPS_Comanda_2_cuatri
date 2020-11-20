@@ -57,5 +57,12 @@ _Cuarta semana - 14/11_
 -Nueva pagina de Menu                           -Sande<br>
 -Seleccion de pedido                            -Sande<br>
 
+_Quinta semana - 21/11_
+
+-Notificaciones push                            -Esposito<br>
+-Pagina de espera de pedidos segun estado       -Sande<br>
+-Pagina de pedido                               -Esposito<br>
+-Juego de descuento                             -Sande<br>
+
 ---
 ⌨️ _UTN-FRA_ ⌨️
