@@ -11,6 +11,8 @@ import { Observable } from 'rxjs';
 export class DataService {
   
   dbUsersRef:AngularFirestoreCollection<any>;
+  dbPedidosRef:AngularFirestoreCollection<any>;
+
   constructor(
     public http: HttpClient,
     public db: AngularFirestore,
@@ -18,6 +20,7 @@ export class DataService {
     public toastController: ToastController
   ) {
     this.dbUsersRef = this.db.collection("usuarios");
+    this.dbPedidosRef = this.db.collection("pedidos");
   }
 
   traerColeccion(path: string, query: QueryFn = null): Observable<DocumentChangeAction<unknown>[]> {
@@ -91,6 +94,21 @@ export class DataService {
     return this.dbUsersRef.doc(uid).valueChanges();
   }
  
+  public crearConUID(path: string, objeto: any) {
+    console.log('Entro al crear');
+    console.log('path', path);
+    console.log('objeto', objeto);
+    return this.db.collection(path).add(objeto).then(res => {
+      let doc = res;
+      this.updateUID(path, doc.id);
+    });
+  }
+
+  updateUID(path: string, uid: string) {
+    return  this.db.collection(path).doc(uid).update({
+      uid: uid,
+    })
+  }
 
   // subirImagenYTraerURl(path: string, imagenBase64: string): Promise<any> {
   //   let picData = ManejarDatosFoto(imagenBase64);
@@ -128,6 +146,10 @@ export class DataService {
 
   getUsuarios(){
     return this.dbUsersRef.valueChanges();
+  }
+
+  getPedidos(){
+    return this.dbPedidosRef.valueChanges();
   }
 
 }

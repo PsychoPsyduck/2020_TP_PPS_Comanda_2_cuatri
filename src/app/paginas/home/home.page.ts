@@ -37,6 +37,9 @@ export class HomePage {
       case "lista-autorizar":
           this.router.navigate(['/lista-autorizar']);
         break;
+      case "lista-pedidos":
+          this.router.navigate(['/lista-pedidos']);
+        break;
     }
   }
   

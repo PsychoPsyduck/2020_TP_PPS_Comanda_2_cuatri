@@ -59,7 +59,20 @@ const routes: Routes = [
   {
     path: 'lista-autorizar',
     loadChildren: () => import('./paginas/lista-autorizar/lista-autorizar.module').then( m => m.ListaAutorizarPageModule)
+  },
+  {
+    path: 'lista-pedidos',
+    loadChildren: () => import('./paginas/lista-pedidos/lista-pedidos.module').then( m => m.ListaPedidosPageModule)
+  },  {
+    path: 'lista-pedidos-cocina',
+    loadChildren: () => import('./paginas/lista-pedidos-cocina/lista-pedidos-cocina.module').then( m => m.ListaPedidosCocinaPageModule)
+  },
+  {
+    path: 'lista-pedidos-mozo',
+    loadChildren: () => import('./paginas/lista-pedidos-mozo/lista-pedidos-mozo.module').then( m => m.ListaPedidosMozoPageModule)
   }
+
+
 
 
 ];
