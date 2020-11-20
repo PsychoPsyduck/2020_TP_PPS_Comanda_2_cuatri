@@ -26,9 +26,21 @@
         <ion-icon color="danger" name="fast-food-outline" slot="start"></ion-icon>
         <ion-label>Menu</ion-label>
       </ion-item>
+      <ion-item (click)='ruteador("pedido")'>
+        <ion-icon color="danger" name="fast-food-outline" slot="start"></ion-icon>
+        <ion-label>Mi Pedido</ion-label>
+      </ion-item>
       <ion-item (click)='ruteador("lista-pedidos")'>
         <ion-icon color="danger" name="fast-food-outline" slot="start"></ion-icon>
         <ion-label>Pedidos pendientes</ion-label>
+      </ion-item>
+      <ion-item (click)='ruteador("lista-pedidos-cocina")'>
+        <ion-icon color="danger" name="fast-food-outline" slot="start"></ion-icon>
+        <ion-label>Pedidos en cocina</ion-label>
+      </ion-item>
+      <ion-item (click)='ruteador("lista-pedidos-mozo")'>
+        <ion-icon color="danger" name="fast-food-outline" slot="start"></ion-icon>
+        <ion-label>Pedidos a entregar</ion-label>
       </ion-item>
       <ion-item>
         <ion-icon color="success" name="person-add-outline" slot="start"></ion-icon>

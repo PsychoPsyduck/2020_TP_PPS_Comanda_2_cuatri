@@ -70,6 +70,10 @@ const routes: Routes = [
   {
     path: 'lista-pedidos-mozo',
     loadChildren: () => import('./paginas/lista-pedidos-mozo/lista-pedidos-mozo.module').then( m => m.ListaPedidosMozoPageModule)
+  },
+  {
+    path: 'mi-pedido',
+    loadChildren: () => import('./paginas/mi-pedido/mi-pedido.module').then( m => m.MiPedidoPageModule)
   }
 
 

@@ -66,11 +66,20 @@ export class HomePage implements OnInit {
       case "menu":
           this.router.navigate(['/menu'])
         break;
+      case "pedido":
+          this.router.navigate(['/mi-pedido'])
+        break;
       case "lista-autorizar":
           this.router.navigate(['/lista-autorizar']);
         break;
       case "lista-pedidos":
           this.router.navigate(['/lista-pedidos']);
+        break;
+      case "lista-pedidos-cocina":
+          this.router.navigate(['/lista-pedidos-cocina']);
+        break;
+      case "lista-pedidos-mozo":
+          this.router.navigate(['/lista-pedidos-mozo']);
         break;
       case "juego":
         this.openModal();
