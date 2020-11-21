@@ -95,6 +95,25 @@ export class AuthService {
     }) 
 
   }
+  
+  updateMesaEstadoUsuario(usuario:any,estado:number,mesa:any)
+  { 
+
+    return  this.db.collection('usuarios').doc(usuario).update({
+      estado: estado,
+      mesa:mesa,
+      
+    }) 
+      
+  }
+
+  updateEstadoMesa(mesa:any,estado:number)
+  {
+    return  this.db.collection('mesas1').doc(mesa).update({
+      estado: estado,
+      
+    }) 
+  }
 
   prueba()
   {
@@ -115,7 +134,7 @@ export class AuthService {
             "image":image,
     
         },
-        "to":"dYMXr1MLTQetBD39hSUR4B:APA91bFCFeJ2TkMGtfhvd2rZDuLqJaip2TEylJHCw_tXVzFkKnwyhvZ-X6ztBXINBjSZMS0N64Sd0L80FPJe3zu-45cuSV7rUn-hqHxtqIp3TNmfMqGTrbBJxrjmm3qFAqg2kFlHr61i"
+        "to":token,
     }
 
 

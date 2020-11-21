@@ -50,6 +50,10 @@
         <ion-icon color="warning" name="restaurant-outline" slot="start"></ion-icon>
         <ion-label>Alta Mesa</ion-label>
       </ion-item>
+      <ion-item (click)='ruteador("lista-pendientes")'> 
+        <ion-icon color="danger"  name="people-outline" slot="start"></ion-icon>
+        <ion-label>Clientes en espera</ion-label>
+      </ion-item>
       <ion-item (click)="logOut()">
         <ion-icon name="log-out-outline"  slot="start"></ion-icon>
         <ion-label>Salir</ion-label>
@@ -70,18 +74,26 @@
   </ion-header>
   <ion-content class="fondo">
     <div class="container">
-      <div class="cards" (click)='ruteador("envioDomicilio")' (click)="prueba()">
+      <!-- <div *ngIf="user.estado != 2" class="cards" (click)='ruteador("envioDomicilio")' >
         <ion-label class="label">Envio a Domicilio</ion-label>
         <img  style="width: 100%; height: 100%;"  src="../../../assets/img/pedido.png" alt="">
-      </div>
-      <div class="cards" (click)='ruteador("pedirMesa")'>
+      </div> -->
+      <div *ngIf="user.estado != 2" class="cards" (click)="ingresar()">
         <ion-label class="label">Pedir Mesa</ion-label>
        <img style=" width: 100%; height: 100%;" src="../../../assets/img/menu.png" alt="">
       </div>
-      <div class="cards" (click)='ruteador("reservarMesa")'>
-        <ion-label class="label">Hacer una Reserva</ion-label>
+      <div *ngIf="user.estado == 3" class="cards" (click)="sentarse()">
+        <ion-label class="label">Sentarse en la mesa</ion-label>
         <img style=" width: 100%; height: 100%;" src="../../../assets/img/reserva.jpg" alt="">
        </div>
+
+       <!-- <div (click)="prueba()" style="background-color: rgb(141, 31, 31); height: auto;" *ngIf="user.estado == 2" class="cards" >
+          <h2 style="color: white; font-size: 3rem;">Por favor Aguarde hasta que se le sea asignada una mesa.</h2>
+       </div> -->
+       <div (click)="prueba()" style="background-color: rgb(141, 31, 31); height: auto;" *ngIf="user.estado == 2" class="cards" >
+        <h2 style="color: white; font-size: 3rem;">Por favor Aguarde hasta que se le sea asignada una mesa.</h2>
+     </div>
+
      
     </div>
     <!-- <ion-button expand="block" onclick="openMenu()">Open Menu</ion-button> -->

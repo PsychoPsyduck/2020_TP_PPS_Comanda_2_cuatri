@@ -63,7 +63,8 @@ const routes: Routes = [
   {
     path: 'lista-pedidos',
     loadChildren: () => import('./paginas/lista-pedidos/lista-pedidos.module').then( m => m.ListaPedidosPageModule)
-  },  {
+  },
+  {
     path: 'lista-pedidos-cocina',
     loadChildren: () => import('./paginas/lista-pedidos-cocina/lista-pedidos-cocina.module').then( m => m.ListaPedidosCocinaPageModule)
   },
@@ -74,8 +75,11 @@ const routes: Routes = [
   {
     path: 'mi-pedido',
     loadChildren: () => import('./paginas/mi-pedido/mi-pedido.module').then( m => m.MiPedidoPageModule)
+  },
+  {
+    path: 'lista-pendientes',
+    loadChildren: () => import('./paginas/lista-pendientes/lista-pendientes.module').then( m => m.ListaPendientesPageModule)
   }
-
 
 
 

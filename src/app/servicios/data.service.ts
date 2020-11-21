@@ -4,6 +4,7 @@ import { AngularFirestore, AngularFirestoreCollection, DocumentChangeAction, Doc
 import { AngularFireStorage } from '@angular/fire/storage';
 import { ToastController } from '@ionic/angular';
 import { Observable } from 'rxjs';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,8 @@ export class DataService {
     public http: HttpClient,
     public db: AngularFirestore,
     public afs: AngularFireStorage,
-    public toastController: ToastController
+    public toastController: ToastController,
+    public angularFireAuth:AngularFireAuth,
   ) {
     this.dbUsersRef = this.db.collection("usuarios");
     this.dbPedidosRef = this.db.collection("pedidos");
@@ -92,6 +94,25 @@ export class DataService {
     
   getUserByUid(uid: string) {
     return this.dbUsersRef.doc(uid).valueChanges();
+  }
+
+  getUserUid()
+  {  
+      return new Promise((resolve, reject) => {
+        this.angularFireAuth.onAuthStateChanged(function(user){
+            if(user)
+            {
+              resolve(user.uid)
+            }
+            else
+            {
+              resolve("0")
+            }
+        })
+        
+      })
+
+
   }
  
   public crearConUID(path: string, objeto: any) {
