@@ -59,7 +59,11 @@ const routes: Routes = [
   {
     path: 'lista-autorizar',
     loadChildren: () => import('./paginas/lista-autorizar/lista-autorizar.module').then( m => m.ListaAutorizarPageModule)
+  },  {
+    path: 'lista-pendientes',
+    loadChildren: () => import('./paginas/lista-pendientes/lista-pendientes.module').then( m => m.ListaPendientesPageModule)
   }
+
 
 
 ];
