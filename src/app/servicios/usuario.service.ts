@@ -39,4 +39,10 @@ export class UsuarioService {
       }).catch(err => console.log(err));
     });
   }
+
+  agregarPedido(usuario: string, uid: string) { 
+    return  this.db.collection('usuarios').doc(usuario).update({
+      pedido: uid,
+    }) 
+  }
 }

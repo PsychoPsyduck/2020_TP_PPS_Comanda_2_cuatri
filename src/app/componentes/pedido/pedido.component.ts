@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { Usuario } from 'src/app/clases/usuario';
 import { DataService } from 'src/app/servicios/data.service';
+import { UsuarioService } from 'src/app/servicios/usuario.service';
 
 @Component({
   selector: 'app-pedido',
@@ -10,9 +12,11 @@ import { DataService } from 'src/app/servicios/data.service';
 export class PedidoComponent implements OnInit {
 
   pedido = [];
+  usuario:any = Usuario;
 
   constructor(private modal: ModalController,
-              private dataService: DataService) { }
+              private dataService: DataService,
+              private userService: UsuarioService) { }
 
   ngOnInit() {}
 
@@ -42,11 +46,14 @@ export class PedidoComponent implements OnInit {
       mesa: 1,
       total: importe,
       descuento: 0,
-      estado: 0
+      estado: 0,
+      usuario: this.usuario
     }
 
-    this.dataService.crearConUID("pedidos", pedido).then(res => {
+    this.dataService.crearConUID("pedidos", pedido, this.usuario.uid).then(res => {
+      
       this.closeModal();
+
     });
   }
 

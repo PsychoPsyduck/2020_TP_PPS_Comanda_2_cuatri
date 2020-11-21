@@ -5,6 +5,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { ToastController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { UsuarioService } from './usuario.service';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,7 @@ export class DataService {
     public afs: AngularFireStorage,
     public toastController: ToastController,
     public angularFireAuth:AngularFireAuth,
+    private userService: UsuarioService
   ) {
     this.dbUsersRef = this.db.collection("usuarios");
     this.dbPedidosRef = this.db.collection("pedidos");
@@ -115,13 +117,15 @@ export class DataService {
 
   }
  
-  public crearConUID(path: string, objeto: any) {
+  public crearConUID(path: string, objeto: any, userUid: string) {
     console.log('Entro al crear');
     console.log('path', path);
     console.log('objeto', objeto);
+    
     return this.db.collection(path).add(objeto).then(res => {
       let doc = res;
       this.updateUID(path, doc.id);
+      this.userService.agregarPedido(userUid, doc.id)
     });
   }
 
