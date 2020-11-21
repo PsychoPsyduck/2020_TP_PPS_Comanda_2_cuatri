@@ -152,4 +152,7 @@ export class DataService {
     return this.dbPedidosRef.valueChanges();
   }
 
+  getaux() {
+    return this.dbUsersRef.valueChanges();
+  }
 }

@@ -61,6 +61,7 @@ export class HomePage implements OnInit {
           this.router.navigate(['/pedir-mesa'])
         break;
       case "reservarMesa":
+        // console.log(this.auth.usuarioaux);
           this.router.navigate(['/reservar-mesa'])
         break;
       case "menu":
@@ -80,9 +81,6 @@ export class HomePage implements OnInit {
         break;
       case "lista-pedidos-mozo":
           this.router.navigate(['/lista-pedidos-mozo']);
-        break;
-      case "juego":
-        this.openModal();
         break;
     }
   }

@@ -33,13 +33,14 @@
           <ion-label>
             <h3>{{plato.nombre}}</h3>
             <p>{{plato.descripcion}}</p>
-          </ion-label>
+          </ion-label> 
         </ion-item>
       </ion-list>
     </ion-card-content>
 
     <ion-button>Llegó pedido?</ion-button>
-    <ion-button (click)='openModal()'>Modal</ion-button>
+    <ion-button (click)='openModal("encuesta")'>Encuesta</ion-button>
+    <ion-button (click)='openModal("juego")'>Juego</ion-button>
   </ion-card>
   
 

@@ -8,6 +8,7 @@ import { ToastrService } from 'ngx-toastr';
 import { UsuarioService } from './usuario.service';
 import { HttpClient } from "@angular/common/http";
 import { Platform } from '@ionic/angular';
+import { DataService } from './data.service';
 
 
 @Injectable({
@@ -16,8 +17,10 @@ import { Platform } from '@ionic/angular';
 export class AuthService {
   [x: string]: any;
  
+  usuarioaux = null;
+
   rutaNotification = "https://fcm.googleapis.com/fcm/send";
-  constructor(private router: Router, private usuarioService: UsuarioService, private toast:ToastrService,public angularFireAuth:AngularFireAuth, private db: AngularFirestore, private http:HttpClient) { } 
+  constructor(private router: Router, private usuarioService: UsuarioService, private toast:ToastrService,public angularFireAuth:AngularFireAuth, private db: AngularFirestore, private http:HttpClient, private dataService:DataService) { } 
 
   async sendVerificationEmail(): Promise<void> {
     return (await this.angularFireAuth.currentUser).sendEmailVerification();
@@ -46,16 +49,10 @@ export class AuthService {
   login(email: string, password: string){
     return new Promise ((resolve, rejects) => {
       this.angularFireAuth.signInWithEmailAndPassword(email, password).then(user => {
+        let doc = user.user
+        //consigue el usuario logeado 
+        // this.getUser(doc.uid);
         resolve(user);
-        // if(!user.user.emailVerified)
-        // {
-        //   this.router.navigate(['/verificacion']);
-          
-        // }
-        // else
-        // {
-        //   this.router.navigate(['/home']);
-        // }
       }).catch(err => rejects(err));
     });
   }
@@ -152,4 +149,10 @@ export class AuthService {
   //     .catch(error=> {​​​​ reject(error) }​​​​);
   //   }​​​​);
   // }​​​​
+
+  getUser(uid: string) {
+    this.dataService.getaux().subscribe(res => {
+      this.usuarioaux = res.filter(x => x.uid == uid);
+    });
+  }
 }
