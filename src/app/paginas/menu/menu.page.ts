@@ -16,6 +16,8 @@ export class MenuPage implements OnInit {
   user:any = new Usuario;
   total = 0;
   items = []
+  plato:any;
+  mostrar = false;
 
   constructor(private dataService: DataService,
               private modal: ModalController,
@@ -40,6 +42,17 @@ export class MenuPage implements OnInit {
   agregar(plato) {
     this.items.push(plato);
     this.total += plato.precio;
+  }
+
+  prueba(pla:any)
+  { 
+    this.plato = pla;
+    this.mostrar = true;
+  }
+
+  cerrar(item:boolean)
+  {
+     this.mostrar = item;
   }
 
   openModal() {

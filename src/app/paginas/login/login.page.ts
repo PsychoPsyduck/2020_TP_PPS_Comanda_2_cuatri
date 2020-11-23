@@ -18,6 +18,7 @@ export class LoginPage implements OnInit {
   pass: string;
   msjError: string;
   logeando=true;
+  spiner = false;
   ocultarVerificar: boolean;
 
   constructor(private fb: FormBuilder, 
@@ -32,13 +33,21 @@ export class LoginPage implements OnInit {
       clave: ['', Validators.required]
     });
   }
+  
+  ionViewWillEnter()
+  {
+    this.spiner = false;
+    
+  }
+
 
   Entrar(){
+    this.spiner = true;
     const { mail, clave } = this.form.value;
 
     this.authService.login(mail, clave).then( res => {
-      
       this.router.navigate(['/home']);
+      //this.spiner = false; 
     }).catch(err => this.presentAlert(err));
   }
 
@@ -88,34 +97,37 @@ export class LoginPage implements OnInit {
 
   AutoLog(usuario) {
     switch (usuario) {
-      case "jefe" :
+      case "Mozo" :
         this.form.setValue({
           mail: "dueño@mail.com",
           clave: "123456"
         });
         break;
-      case "super" :
+      case "Bar" :
         this.form.setValue({
           mail: "supervisor@mail.com",
           clave: "123456"
         });
         break;
-      case "admin" :
+      case "Admin" :
         this.form.setValue({
           mail: "administrador@mail.com",
           clave: "123456"
+          
         });
         break;
-      case "empleado" :
+      case "Cocinero" :
         this.form.setValue({
           mail: "empleado@mail.com",
           clave: "123456"
         });
         break;
-      case "cliente" :
+      case "Cliente" :
         this.form.setValue({
-          mail: "cliente@mail.com",
-          clave: "123456"
+          // mail: "cliente@mail.com",
+          // clave: "123456"
+          mail: "espositojoaquin1998@gmail.com",
+          clave: "1234567"
         });
         break;      
     }

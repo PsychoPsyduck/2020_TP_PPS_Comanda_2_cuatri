@@ -11,7 +11,7 @@
   <ion-list>
     <ion-list-header>Listado de Platos</ion-list-header>
     <ion-item *ngFor="let plato of listaPlatos">
-      <ion-avatar slot="start">
+      <ion-avatar (click)="prueba(plato)" slot="start">
         <img src={{plato.img1}}>
       </ion-avatar>
       <ion-label>
@@ -23,6 +23,8 @@
     </ion-item>
   </ion-list>
 </ion-content>
+<app-imagenes  [mostrar]="mostrar" [user]="plato" (eventoMostrarModal)="cerrar($event)"></app-imagenes>
+
 
 <ion-footer class="ion-no-border">
   <ion-toolbar >
