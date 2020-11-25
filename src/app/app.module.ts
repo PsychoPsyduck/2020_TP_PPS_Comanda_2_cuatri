@@ -49,6 +49,8 @@ import { JuegoComponent } from './componentes/juego/juego.component';
 import { EncuestaComponent } from './componentes/encuesta/encuesta.component';
 import { EstadoPipe } from './pipes/estado.pipe';
 import { DescuentoPipe } from './pipes/descuento.pipe';
+import { DetalleCuentaComponent } from './componentes/detalle-cuenta/detalle-cuenta.component';
+import { DescuentoComponentePipe } from './pipes/descuento-componente.pipe';
 
 
 @NgModule({
@@ -57,7 +59,8 @@ import { DescuentoPipe } from './pipes/descuento.pipe';
     PedidoComponent, 
     JuegoComponent, 
     EncuestaComponent, 
-    // DescuentoPipe, 
+    DetalleCuentaComponent,
+    DescuentoComponentePipe, 
     // EstadoPipe
   ],
   entryComponents: [PedidoComponent],

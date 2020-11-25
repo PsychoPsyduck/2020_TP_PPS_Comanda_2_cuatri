@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ToastrService } from 'ngx-toastr';
 import { Usuario } from 'src/app/clases/usuario';
+import { DetalleCuentaComponent } from 'src/app/componentes/detalle-cuenta/detalle-cuenta.component';
 import { EncuestaComponent } from 'src/app/componentes/encuesta/encuesta.component';
 import { JuegoComponent } from 'src/app/componentes/juego/juego.component';
 import { AuthService } from 'src/app/servicios/auth.service';
@@ -82,6 +83,20 @@ export class MiPedidoPage implements OnInit {
         });
         break;
 
+      case "cuenta":
+        this.modal.create({
+          component: DetalleCuentaComponent,
+          componentProps: {
+            pedido: this.pedido
+          }
+        }).then((modal) => {
+          //abre el modal si hay por lo menos un item seleccionado
+          if(true) {
+            modal.present();
+          }
+        });
+        break;
+
     }
     
   }
@@ -93,12 +108,6 @@ export class MiPedidoPage implements OnInit {
       // if (index > -1) {
       //   this.lista.splice(index, 1);
       // }
-    });
-  }
-
-  pedirCuenta(item) {
-    this.pedidoService.updateEstado(item.uid, 5).then(res =>{
-      this.toas.success("Ha pedido la cuenta");
     });
   }
 }

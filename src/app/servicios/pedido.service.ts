@@ -29,6 +29,14 @@ export class PedidoService {
       estado: estado,
     }) 
   }
+
+  pedirCuenta(pedido: any, propina: string, subtotal: number) { 
+    return  this.db.collection('pedidos').doc(pedido).update({
+      estado: 5,
+      propina: propina,
+      subtotal: subtotal
+    }) 
+  }
   // getPedido(uid: string) {
   //   return new Promise ((resolve, rejects) => { 
   //     this.getPedidoUser(uid).subscribe(res => {
