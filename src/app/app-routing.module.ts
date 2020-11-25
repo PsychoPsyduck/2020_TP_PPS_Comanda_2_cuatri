@@ -79,7 +79,11 @@ const routes: Routes = [
   {
     path: 'lista-pendientes',
     loadChildren: () => import('./paginas/lista-pendientes/lista-pendientes.module').then( m => m.ListaPendientesPageModule)
+  },  {
+    path: 'lista-cobros',
+    loadChildren: () => import('./paginas/lista-cobros/lista-cobros.module').then( m => m.ListaCobrosPageModule)
   }
+
 
 
 

@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { MiPedidoPageRoutingModule } from './mi-pedido-routing.module';
 
 import { MiPedidoPage } from './mi-pedido.page';
+import { EstadoPipe } from 'src/app/pipes/estado.pipe';
+import { DescuentoPipe } from 'src/app/pipes/descuento.pipe';
 
 @NgModule({
   imports: [
@@ -15,6 +17,10 @@ import { MiPedidoPage } from './mi-pedido.page';
     IonicModule,
     MiPedidoPageRoutingModule
   ],
-  declarations: [MiPedidoPage]
+  declarations: [
+    MiPedidoPage, 
+    EstadoPipe,
+    DescuentoPipe
+  ]
 })
 export class MiPedidoPageModule {}

@@ -10,16 +10,16 @@
 <ion-content>
   <ion-card *ngIf="pedido">
     <ion-item-group>
-      <ion-card-title>Estado: {{pedido.estado}}</ion-card-title>
+      <ion-card-title>Estado: {{pedido.estado | estado}}</ion-card-title>
       <ion-item-divider></ion-item-divider>
       <ion-item>
         <ion-label>Mesa: {{pedido.mesa}}</ion-label>
       </ion-item>
       <ion-item>
-        <ion-label>Descuento: {{pedido.descuento}}</ion-label>
+        <ion-label>Descuento: {{pedido.descuento | descuento}}</ion-label>
       </ion-item>
       <ion-item>
-        <ion-label>Total: {{pedido.total}}</ion-label>
+        <ion-label>Total: ${{pedido.total}}</ion-label>
       </ion-item>
     </ion-item-group>
     
@@ -39,6 +39,7 @@
     </ion-card-content>
 
     <ion-button (click)='llegoPedido(pedido)'>Llegó pedido?</ion-button>
+    <ion-button (click)='pedirCuenta(pedido)'>Pedir cuenta</ion-button>
     <ion-button (click)='openModal("encuesta")'>Encuesta</ion-button>
     <ion-button (click)='openModal("juego")'>Juego</ion-button>
   </ion-card>

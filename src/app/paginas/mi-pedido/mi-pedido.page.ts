@@ -15,8 +15,8 @@ import { PedidoService } from 'src/app/servicios/pedido.service';
 })
 export class MiPedidoPage implements OnInit {
 
-  pedido:any;
-  user:any = new Usuario;
+  pedido: any;
+  user: any = new Usuario;
   pedidos;
 
   constructor(private modal: ModalController,
@@ -57,7 +57,8 @@ export class MiPedidoPage implements OnInit {
         this.modal.create({
           component: EncuestaComponent,
           componentProps: {
-            // pedido: this.items
+            pedido: this.pedido,
+            usuario: this.user
           }
         }).then((modal) => {
           //abre el modal si hay por lo menos un item seleccionado
@@ -71,7 +72,7 @@ export class MiPedidoPage implements OnInit {
         this.modal.create({
           component: JuegoComponent,
           componentProps: {
-            // pedido: this.items
+            pedido: this.pedido
           }
         }).then((modal) => {
           //abre el modal si hay por lo menos un item seleccionado
@@ -92,6 +93,12 @@ export class MiPedidoPage implements OnInit {
       // if (index > -1) {
       //   this.lista.splice(index, 1);
       // }
+    });
+  }
+
+  pedirCuenta(item) {
+    this.pedidoService.updateEstado(item.uid, 5).then(res =>{
+      this.toas.success("Ha pedido la cuenta");
     });
   }
 }

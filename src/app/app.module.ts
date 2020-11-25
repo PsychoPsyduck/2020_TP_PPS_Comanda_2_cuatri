@@ -47,10 +47,19 @@ import { PedidoComponent } from '../app/componentes/pedido/pedido.component';
 import { FcmService } from "../app/servicios/fcm.service";
 import { JuegoComponent } from './componentes/juego/juego.component';
 import { EncuestaComponent } from './componentes/encuesta/encuesta.component';
+import { EstadoPipe } from './pipes/estado.pipe';
+import { DescuentoPipe } from './pipes/descuento.pipe';
 
 
 @NgModule({
-  declarations: [AppComponent, PedidoComponent, JuegoComponent, EncuestaComponent],
+  declarations: [
+    AppComponent, 
+    PedidoComponent, 
+    JuegoComponent, 
+    EncuestaComponent, 
+    // DescuentoPipe, 
+    // EstadoPipe
+  ],
   entryComponents: [PedidoComponent],
   imports: [
     HttpClientModule,
@@ -77,7 +86,7 @@ import { EncuestaComponent } from './componentes/encuesta/encuesta.component';
     Camera,
     ImagePicker,
     FcmService,
- 
+    // EstadoPipe
   ],
   bootstrap: [AppComponent]
 })

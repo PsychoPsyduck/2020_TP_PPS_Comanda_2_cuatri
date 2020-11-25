@@ -18,6 +18,17 @@ export class PedidoService {
     }) 
   }
 
+  updateDescuento(pedido: any, descuento: number) { 
+    return  this.db.collection('pedidos').doc(pedido).update({
+      descuento: descuento,
+    }) 
+  }
+
+  updateEncuesta(pedido: any, estado: number) { 
+    return  this.db.collection('pedidos').doc(pedido).update({
+      estado: estado,
+    }) 
+  }
   // getPedido(uid: string) {
   //   return new Promise ((resolve, rejects) => { 
   //     this.getPedidoUser(uid).subscribe(res => {
@@ -34,5 +45,11 @@ export class PedidoService {
 
   getPedido(uid: string) {
     return this.dbPedidosRef.doc(uid).valueChanges();
+  }
+
+  agregarEncuesta(pedido: string, encuesta: string) { 
+    return  this.db.collection('pedidos').doc(pedido).update({
+      encuesta: encuesta,
+    }) 
   }
 }
