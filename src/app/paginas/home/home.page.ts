@@ -118,6 +118,8 @@ export class HomePage implements OnInit {
         break;
       case "lista-cobros":
          this.router.navigate(['/lista-cobros']);
+      case "chats":
+         this.router.navigate(['/chats']);
         break;
 
     }

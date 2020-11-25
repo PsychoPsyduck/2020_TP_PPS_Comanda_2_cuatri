@@ -6,6 +6,7 @@
 
 <ion-content class="fondo">
   <ion-toolbar>
+    <img *ngIf="spiner" style="display:flex; position: absolute; z-index: 999; margin:0; "src="../../../assets/img/gif-splash.gif" alt="">
     <ion-title style="font-family:Georgia, 'Times New Roman', Times, serif;">Iniciar Sesión</ion-title>
     <br>
     <form [formGroup]="form" >
@@ -21,22 +22,23 @@
       <br>
       <ion-button style="margin-bottom: 2rem;" [hidden]="ocultarVerificar"  color='secondary' *ngIf="logeando"  (click)="Entrar()">Entrar</ion-button>
       <!-- <ion-button [hidden]="!ocultarVerificar" color="secondary" *ngIf="logeando"  (click)="Entrar()"><i class="fa fa-spinner fa-spin"></i> Ingresando</ion-button> -->
-       <br>
+      <br>
       <span style="margin-top:2rem;">¿Todavía no sos usuario? <a (click)="registrar()">Registrate</a></span>
       
     </form>
   </ion-toolbar>
+  
   
   <ion-fab id="f-boton-idioma" horizontal="end" vertical="bottom" slot="fixed">
     <ion-fab-button color="primary">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
     <ion-fab-list side="top">
-      <ion-fab-button color="secondary" (click)="AutoLog('jefe')">Jefe</ion-fab-button>
-      <ion-fab-button color="secondary" (click)="AutoLog('admin')">Adm</ion-fab-button>
-      <ion-fab-button color="secondary" (click)="AutoLog('super')">Sprv</ion-fab-button>
-      <ion-fab-button color="secondary" (click)="AutoLog('empleado')">Empl</ion-fab-button>
-      <ion-fab-button color="secondary" (click)="AutoLog('cliente')">Clnt</ion-fab-button>
+      <ion-fab-button color="secondary" (click)="AutoLog('Mozo')">Moz</ion-fab-button>
+      <ion-fab-button color="secondary" (click)="AutoLog('Admin')">Adm</ion-fab-button>
+      <ion-fab-button color="secondary" (click)="AutoLog('Bar')">Bar</ion-fab-button>
+      <ion-fab-button color="secondary" (click)="AutoLog('Cocinero')">Coci</ion-fab-button>
+      <ion-fab-button color="secondary" (click)="AutoLog('Cliente')">Clnt</ion-fab-button>
     </ion-fab-list>
   </ion-fab>
 </ion-content>

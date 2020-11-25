@@ -45,4 +45,47 @@ export class UsuarioService {
       pedido: uid,
     }) 
   }
+
+  addConsulta(consulta:any, user:any){
+    console.log("llega consulta");
+    return this.db.collection("consultas").ref.orderBy('id',"desc").limit(1).get().then(res=>{    
+       res.forEach( a =>{
+         
+         console.log("info id");
+         let id = Number(a.id) + 1;
+         console.log(id);
+          this.db.collection("consultas").doc(id.toString()).set({
+           id:id,
+           mesa: user.mesa.numero,
+           estado:0,
+           usuario: user,
+           consulta: consulta,
+       
+          })
+ 
+       })
+     
+     
+     })
+     
+   }
+
+   
+
+   responderConsulta(idConsulta,respuesta,mozo)
+   { 
+
+      return  this.db.collection('consultas').doc(idConsulta.toString()).update({
+        respuesta: respuesta,
+        mozo:mozo,
+        estado:1,
+      
+      
+      }) 
+
+
+   }
+ 
+
+
 }

@@ -51,6 +51,8 @@ import { EstadoPipe } from './pipes/estado.pipe';
 import { DescuentoPipe } from './pipes/descuento.pipe';
 import { DetalleCuentaComponent } from './componentes/detalle-cuenta/detalle-cuenta.component';
 import { DescuentoComponentePipe } from './pipes/descuento-componente.pipe';
+import { ConsultarMozoComponent } from './componentes/consultar-mozo/consultar-mozo.component';
+import { ImagenesComponent } from './componentes/imagenes/imagenes.component';
 
 
 @NgModule({
@@ -60,7 +62,9 @@ import { DescuentoComponentePipe } from './pipes/descuento-componente.pipe';
     JuegoComponent, 
     EncuestaComponent, 
     DetalleCuentaComponent,
-    DescuentoComponentePipe, 
+    DescuentoComponentePipe,
+    ImagenesComponent,
+    ConsultarMozoComponent
     // EstadoPipe
   ],
   entryComponents: [PedidoComponent],
@@ -81,7 +85,7 @@ import { DescuentoComponentePipe } from './pipes/descuento-componente.pipe';
     AngularFirestoreModule,
     
   ],
-  providers: [
+  providers: [ 
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

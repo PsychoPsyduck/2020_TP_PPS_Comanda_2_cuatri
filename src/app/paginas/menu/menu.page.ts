@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular'
 import { Usuario } from 'src/app/clases/usuario';
+import { ConsultarMozoComponent } from 'src/app/componentes/consultar-mozo/consultar-mozo.component';
 import { PedidoComponent } from 'src/app/componentes/pedido/pedido.component';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { DataService } from 'src/app/servicios/data.service';
@@ -17,6 +18,8 @@ export class MenuPage implements OnInit {
   user:any = new Usuario;
   total = 0;
   items = []
+  plato:any;
+  mostrar = false;
 
   constructor(private dataService: DataService,
               private modal: ModalController,
@@ -43,18 +46,51 @@ export class MenuPage implements OnInit {
     this.total += plato.precio;
   }
 
-  openModal() {
-    this.modal.create({
-      component: PedidoComponent,
-      componentProps: {
-        pedido: this.items,
-        usuario: this.user
-      }
-    }).then((modal) => {
-      //abre el modal si hay por lo menos un item seleccionado
-      if(this.items.length > 0) {
-        modal.present();
-      }
-    });
+  prueba(pla:any)
+  { 
+    this.plato = pla;
+    this.mostrar = true;
+  }
+
+  cerrar(item:boolean)
+  {
+     this.mostrar = item;
+  }
+
+  openModal(option:string) {
+   
+
+    switch(option)
+    {
+      case "pedido":
+        this.modal.create({
+          component: PedidoComponent,
+          componentProps: {
+            pedido: this.items,
+            usuario: this.user
+          }
+        }).then((modal) => {
+          //abre el modal si hay por lo menos un item seleccionado
+          if(this.items.length > 0) {
+            modal.present();
+          }
+        });
+        
+        break;
+      case "consulta":
+        this.modal.create({
+          component: ConsultarMozoComponent,
+          componentProps: {
+            usuario: this.user
+          }
+        }).then((modal) => {
+          
+            modal.present();
+          
+        });
+
+        break;
+    }
+
   }
 }
