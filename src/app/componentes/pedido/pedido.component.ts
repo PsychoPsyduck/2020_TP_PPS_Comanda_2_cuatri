@@ -47,7 +47,9 @@ export class PedidoComponent implements OnInit {
       total: importe,
       descuento: 0,
       estado: 0,
-      usuario: this.usuario
+      usuario: this.usuario,
+      estadoBar: 0,
+      estadoCocina: 0
     }
 
     this.dataService.crearConUID("pedidos", pedido, this.usuario.uid).then(res => {

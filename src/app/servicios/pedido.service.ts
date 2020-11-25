@@ -18,6 +18,17 @@ export class PedidoService {
     }) 
   }
 
+  updateEstadoCocina(pedido: any, estado: number) { 
+    return  this.db.collection('pedidos').doc(pedido).update({
+      estadoCocina: estado,
+    }) 
+  }
+  updateEstadoBar(pedido: any, estado: number) { 
+    return  this.db.collection('pedidos').doc(pedido).update({
+      estadoBar: estado,
+    }) 
+  }
+
   updateDescuento(pedido: any, descuento: number) { 
     return  this.db.collection('pedidos').doc(pedido).update({
       descuento: descuento,

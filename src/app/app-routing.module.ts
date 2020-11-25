@@ -82,6 +82,10 @@ const routes: Routes = [
   },  {
     path: 'lista-cobros',
     loadChildren: () => import('./paginas/lista-cobros/lista-cobros.module').then( m => m.ListaCobrosPageModule)
+  },
+  {
+    path: 'lista-pedidos-bar',
+    loadChildren: () => import('./paginas/lista-pedidos-bar/lista-pedidos-bar.module').then( m => m.ListaPedidosBarPageModule)
   }
 
 

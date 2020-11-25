@@ -12,7 +12,8 @@ import { DataService } from 'src/app/servicios/data.service';
 })
 export class MenuPage implements OnInit {
 
-  listaPlatos;
+  listaComida;
+  listaBebida;
   user:any = new Usuario;
   total = 0;
   items = []
@@ -22,18 +23,18 @@ export class MenuPage implements OnInit {
               private auth: AuthService) { }
 
   ngOnInit() {
-    this.dataService.getAll("platos").subscribe(res => {
-
-      this.listaPlatos = res
+    this.dataService.getPlatos().subscribe(res => {
+      this.listaComida = res.filter(res => res.tipo == "Comida");
+    });
+    this.dataService.getPlatos().subscribe(res => {
+      this.listaBebida = res.filter(res => res.tipo == "Bebida");
     });
 
     this.auth.getCurrentUserMail().then(res =>{
       
       this.dataService.getUserByUid(res.uid).subscribe(us =>{
         this.user = us;
-
       })
-      
     })
   }
 
