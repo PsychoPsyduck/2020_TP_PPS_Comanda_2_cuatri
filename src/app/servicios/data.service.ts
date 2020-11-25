@@ -14,6 +14,7 @@ export class DataService {
   
   dbUsersRef:AngularFirestoreCollection<any>;
   dbPedidosRef:AngularFirestoreCollection<any>;
+  dbConsultas:AngularFirestoreCollection<any>;
 
   constructor(
     public http: HttpClient,
@@ -25,6 +26,7 @@ export class DataService {
   ) {
     this.dbUsersRef = this.db.collection("usuarios");
     this.dbPedidosRef = this.db.collection("pedidos");
+    this.dbConsultas = this.db.collection("consultas");
   }
 
   traerColeccion(path: string, query: QueryFn = null): Observable<DocumentChangeAction<unknown>[]> {
@@ -51,6 +53,11 @@ export class DataService {
 
   getAll(path:string) {
     return this.db.collection(path).valueChanges();
+  }
+
+  getConsultas()
+  {
+    return this.dbConsultas.valueChanges();
   }
 
   public crear(path: string, objeto: any): Promise<DocumentReference> {

@@ -79,7 +79,11 @@ const routes: Routes = [
   {
     path: 'lista-pendientes',
     loadChildren: () => import('./paginas/lista-pendientes/lista-pendientes.module').then( m => m.ListaPendientesPageModule)
+  },  {
+    path: 'chats',
+    loadChildren: () => import('./paginas/chats/chats.module').then( m => m.ChatsPageModule)
   }
+
 
 
 

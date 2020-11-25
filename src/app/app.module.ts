@@ -48,10 +48,12 @@ import { FcmService } from "../app/servicios/fcm.service";
 import { JuegoComponent } from './componentes/juego/juego.component';
 import { EncuestaComponent } from './componentes/encuesta/encuesta.component';
 import { ImagenesComponent } from "./componentes/imagenes/imagenes.component";
+import { ConsultarMozoComponent  } from "./componentes/consultar-mozo/consultar-mozo.component";
+import { RespuestaMozoComponent } from "./componentes/respuesta-mozo/respuesta-mozo.component";
 
 
 @NgModule({
-  declarations: [AppComponent, PedidoComponent, JuegoComponent, EncuestaComponent,ImagenesComponent],
+  declarations: [AppComponent, PedidoComponent, JuegoComponent, EncuestaComponent,ImagenesComponent,ConsultarMozoComponent],
   entryComponents: [PedidoComponent],
   imports: [
     HttpClientModule,
@@ -70,7 +72,7 @@ import { ImagenesComponent } from "./componentes/imagenes/imagenes.component";
     AngularFirestoreModule,
     
   ],
-  providers: [
+  providers: [ 
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

@@ -8,6 +8,8 @@ import { MenuPageRoutingModule } from './menu-routing.module';
 
 import { MenuPage } from './menu.page';
 import { ImagenesComponent  } from "../../componentes/imagenes/imagenes.component";
+import { ConsultarMozoComponent  } from "../../componentes/consultar-mozo/consultar-mozo.component";
+
 
 @NgModule({
   imports: [
@@ -16,6 +18,6 @@ import { ImagenesComponent  } from "../../componentes/imagenes/imagenes.componen
     IonicModule,
     MenuPageRoutingModule
   ],
-  declarations: [MenuPage,ImagenesComponent]
+  declarations: [MenuPage,ImagenesComponent,ConsultarMozoComponent]
 })
 export class MenuPageModule {}

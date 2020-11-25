@@ -116,6 +116,9 @@ export class HomePage implements OnInit {
       case "lista-pendientes":
          this.router.navigate(['/lista-pendientes']);
         break;
+      case "chats":
+         this.router.navigate(['/chats']);
+        break;
 
     }
   }
