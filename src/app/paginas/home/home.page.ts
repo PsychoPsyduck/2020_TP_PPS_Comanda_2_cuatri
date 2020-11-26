@@ -49,6 +49,19 @@ export class HomePage implements OnInit {
   // }
   ngOnInit(): void {
 
+    // this.auth.getCurrentUserMail().then(res =>{
+      
+    //   this.data.getUserByUid(res.uid).subscribe(us =>{
+    //     this.user = us;
+
+    //   })
+      
+    // })
+
+  }
+
+  ionViewWillEnter()
+  {
     this.auth.getCurrentUserMail().then(res =>{
       
       this.data.getUserByUid(res.uid).subscribe(us =>{
@@ -57,20 +70,7 @@ export class HomePage implements OnInit {
       })
       
     })
-
   }
-
-  // ionViewWillEnter()
-  // {
-  //   this.auth.getCurrentUserMail().then(res =>{
-      
-  //     this.data.getUserByUid(res.uid).subscribe(us =>{
-  //       this.user = us;
-
-  //     })
-      
-  //   })
-  // }
 
  
 
