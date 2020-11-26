@@ -46,6 +46,15 @@ export class UsuarioService {
     }) 
   }
 
+  liberarCliente(usuario: string) {
+    console.log("llega")
+    return  this.db.collection('usuarios').doc(usuario).update({
+      estado: 9,
+      mesa: "",
+      pedido: ""
+    }) 
+  }
+
   addConsulta(consulta:any, user:any){
     console.log("llega consulta");
     return this.db.collection("consultas").ref.orderBy('id',"desc").limit(1).get().then(res=>{    

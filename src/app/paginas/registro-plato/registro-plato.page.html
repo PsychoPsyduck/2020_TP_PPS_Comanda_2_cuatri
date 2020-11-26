@@ -31,11 +31,7 @@
       <br>
       <ion-item class="full-width-input">
         <ion-label position='floating'>Tipo</ion-label>
-        <ion-select formControlName="tipo">
-          <ion-select-option *ngFor="let tipo of tipoAlta" [value]="tipo.value">
-            {{tipo.viewValue}}
-          </ion-select-option>
-        </ion-select> 
+        <ion-input type="text" formControlName="tipo" value="Bebida" readonly></ion-input> 
       </ion-item>
       <br>
       <ion-item class="full-width-input">

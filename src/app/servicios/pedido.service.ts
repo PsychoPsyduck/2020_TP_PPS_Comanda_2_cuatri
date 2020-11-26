@@ -66,9 +66,10 @@ export class PedidoService {
     return this.dbPedidosRef.doc(uid).valueChanges();
   }
 
-  agregarEncuesta(pedido: string, encuesta: string) { 
+  agregarEncuesta(pedido: string, encuesta: any) { 
     return  this.db.collection('pedidos').doc(pedido).update({
       encuesta: encuesta,
+      estadoEncuesta: 1
     }) 
   }
 }
