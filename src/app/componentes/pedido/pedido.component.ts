@@ -52,6 +52,15 @@ export class PedidoComponent implements OnInit {
       estadoCocina: 0
     }
 
+    let sinCocina = pedido.platos.filter(x => x.tipo == "Comida" || x.tipo == "comida")
+    let sinBar = pedido.platos.filter(x => x.tipo == "Bebida" || x.tipo == "bebida")
+
+    if(sinCocina.length == 0) {
+      pedido.estadoCocina = 1;
+    } else if (sinBar.length == 0) {
+      pedido.estadoBar = 1;
+    }
+
     this.dataService.crearConUID("pedidos", pedido, this.usuario.uid).then(res => {
       
       this.closeModal();
