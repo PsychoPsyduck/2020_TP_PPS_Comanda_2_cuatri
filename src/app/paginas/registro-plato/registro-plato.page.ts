@@ -26,6 +26,11 @@ export class RegistroPlatoPage implements OnInit {
     {value: 'usuario', viewValue: 'Usuario'}
   ];
 
+  tipoAlta = [
+    {value: "Comida", viewValue: 'Plato'},
+    {value: "Bebida", viewValue: 'Bebida'}
+  ];
+
   constructor(private fb: FormBuilder, 
               private authService: AuthService, 
               private dataService: DataService,

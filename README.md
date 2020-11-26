@@ -59,9 +59,12 @@ _Cuarta semana - 14/11_
 
 _Quinta semana - 21/11_
 
+-Correccion estilo menu pedido                  -Sande<br>
 -Notificaciones push                            -Esposito<br>
 -Pagina de espera de pedidos segun estado       -Sande<br>
--Pagina de pedido                               -Esposito<br>
+-Pagina de mi pedido                            -Esposito<br>
+-Pagina de encuesta                             -Sande<br>
+-Manejo QR en mesa                              -Esposito<br>
 -Juego de descuento                             -Sande<br>
 
 ---

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { PedidoService } from 'src/app/servicios/pedido.service';
 
 @Component({
   selector: 'app-juego',
@@ -30,12 +31,13 @@ export class JuegoComponent implements OnInit {
   sinTiempo = false;
   checkTime = false;
   terminado = false;
+  pedido: any;
 
-  constructor(private modal: ModalController
-    // public firebaseService: FirebaseService
-    ) {}
+  constructor(private modal: ModalController,
+              public pedidoService: PedidoService) {}
 
   ngOnInit() {
+    console.log(this.pedido);
   }
 
   juegoNuevo() {
@@ -56,7 +58,7 @@ export class JuegoComponent implements OnInit {
         this.sinTiempo = true;
         this.check();
       }
-      }, 900);
+    }, 900);
   }
 
   responder(guess: string) {
@@ -66,10 +68,10 @@ export class JuegoComponent implements OnInit {
     if (this.respuesta.toLowerCase() == guess.toLowerCase()) {
       this.ganador = true;
       this.perdedor = false;
-      // this.firebaseService.saveResult('Frase', true);
+      this.juegoTermina(true);
     } else {
         this.perdedor = true;
-        // this.firebaseService.saveResult('Frase', false);
+        this.juegoTermina(false);
     }
   }
 
@@ -85,11 +87,25 @@ export class JuegoComponent implements OnInit {
   check() {
     if(this.sinTiempo && !this.ganador && !this.perdedor) {
       this.checkTime = true;
-      // this.firebaseService.saveResult('Frase', false);
+      this.juegoTermina(false);
     }
   }
 
   closeModal() {
     this.modal.dismiss();
+  }
+
+  juegoTermina(resutlado: boolean) {
+    if(resutlado){
+      //Gano y tiene descuento
+      this.pedidoService.updateDescuento(this.pedido.uid, 1).then( res => {
+        this.closeModal();
+      });
+    } else {
+      //No gano y no tiene descuento
+      this.pedidoService.updateDescuento(this.pedido.uid, 2).then( res => {
+        this.closeModal();
+      });
+    }
   }
 }

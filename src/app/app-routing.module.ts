@@ -79,7 +79,16 @@ const routes: Routes = [
   {
     path: 'lista-pendientes',
     loadChildren: () => import('./paginas/lista-pendientes/lista-pendientes.module').then( m => m.ListaPendientesPageModule)
-  },  {
+  },
+  {
+    path: 'lista-cobros',
+    loadChildren: () => import('./paginas/lista-cobros/lista-cobros.module').then( m => m.ListaCobrosPageModule)
+  },
+  {
+    path: 'lista-pedidos-bar',
+    loadChildren: () => import('./paginas/lista-pedidos-bar/lista-pedidos-bar.module').then( m => m.ListaPedidosBarPageModule)
+  },
+  {
     path: 'chats',
     loadChildren: () => import('./paginas/chats/chats.module').then( m => m.ChatsPageModule)
   }

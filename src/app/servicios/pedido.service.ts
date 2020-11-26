@@ -18,6 +18,36 @@ export class PedidoService {
     }) 
   }
 
+  updateEstadoCocina(pedido: any, estado: number) { 
+    return  this.db.collection('pedidos').doc(pedido).update({
+      estadoCocina: estado,
+    }) 
+  }
+  updateEstadoBar(pedido: any, estado: number) { 
+    return  this.db.collection('pedidos').doc(pedido).update({
+      estadoBar: estado,
+    }) 
+  }
+
+  updateDescuento(pedido: any, descuento: number) { 
+    return  this.db.collection('pedidos').doc(pedido).update({
+      descuento: descuento,
+    }) 
+  }
+
+  updateEncuesta(pedido: any, estado: number) { 
+    return  this.db.collection('pedidos').doc(pedido).update({
+      estado: estado,
+    }) 
+  }
+
+  pedirCuenta(pedido: any, propina: string, subtotal: number) { 
+    return  this.db.collection('pedidos').doc(pedido).update({
+      estado: 5,
+      propina: propina,
+      subtotal: subtotal
+    }) 
+  }
   // getPedido(uid: string) {
   //   return new Promise ((resolve, rejects) => { 
   //     this.getPedidoUser(uid).subscribe(res => {
@@ -34,5 +64,11 @@ export class PedidoService {
 
   getPedido(uid: string) {
     return this.dbPedidosRef.doc(uid).valueChanges();
+  }
+
+  agregarEncuesta(pedido: string, encuesta: string) { 
+    return  this.db.collection('pedidos').doc(pedido).update({
+      encuesta: encuesta,
+    }) 
   }
 }

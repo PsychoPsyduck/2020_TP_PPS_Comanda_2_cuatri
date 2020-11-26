@@ -47,13 +47,28 @@ import { PedidoComponent } from '../app/componentes/pedido/pedido.component';
 import { FcmService } from "../app/servicios/fcm.service";
 import { JuegoComponent } from './componentes/juego/juego.component';
 import { EncuestaComponent } from './componentes/encuesta/encuesta.component';
-import { ImagenesComponent } from "./componentes/imagenes/imagenes.component";
-import { ConsultarMozoComponent  } from "./componentes/consultar-mozo/consultar-mozo.component";
-import { RespuestaMozoComponent } from "./componentes/respuesta-mozo/respuesta-mozo.component";
+import { EstadoPipe } from './pipes/estado.pipe';
+import { DescuentoPipe } from './pipes/descuento.pipe';
+import { DetalleCuentaComponent } from './componentes/detalle-cuenta/detalle-cuenta.component';
+import { DescuentoComponentePipe } from './pipes/descuento-componente.pipe';
+import { ConsultarMozoComponent } from './componentes/consultar-mozo/consultar-mozo.component';
+import { ImagenesComponent } from './componentes/imagenes/imagenes.component';
+import { VerPedidoComponent } from './componentes/ver-pedido/ver-pedido.component';
 
 
 @NgModule({
-  declarations: [AppComponent, PedidoComponent, JuegoComponent, EncuestaComponent,ImagenesComponent,ConsultarMozoComponent],
+  declarations: [
+    AppComponent, 
+    PedidoComponent, 
+    JuegoComponent, 
+    EncuestaComponent, 
+    DetalleCuentaComponent,
+    DescuentoComponentePipe,
+    ImagenesComponent,
+    ConsultarMozoComponent,
+    VerPedidoComponent
+    // EstadoPipe
+  ],
   entryComponents: [PedidoComponent],
   imports: [
     HttpClientModule,
@@ -80,7 +95,7 @@ import { RespuestaMozoComponent } from "./componentes/respuesta-mozo/respuesta-m
     Camera,
     ImagePicker,
     FcmService,
- 
+    // EstadoPipe
   ],
   bootstrap: [AppComponent]
 })

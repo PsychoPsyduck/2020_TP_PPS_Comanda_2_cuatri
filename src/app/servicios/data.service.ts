@@ -14,6 +14,7 @@ export class DataService {
   
   dbUsersRef:AngularFirestoreCollection<any>;
   dbPedidosRef:AngularFirestoreCollection<any>;
+  dbPlatosRef:AngularFirestoreCollection<any>;
   dbConsultas:AngularFirestoreCollection<any>;
 
   constructor(
@@ -26,6 +27,7 @@ export class DataService {
   ) {
     this.dbUsersRef = this.db.collection("usuarios");
     this.dbPedidosRef = this.db.collection("pedidos");
+    this.dbPlatosRef = this.db.collection("platos");
     this.dbConsultas = this.db.collection("consultas");
   }
 
@@ -182,6 +184,10 @@ export class DataService {
 
   getPedidos(){
     return this.dbPedidosRef.valueChanges();
+  }
+
+  getPlatos(){
+    return this.dbPlatosRef.valueChanges();
   }
 
   getaux() {

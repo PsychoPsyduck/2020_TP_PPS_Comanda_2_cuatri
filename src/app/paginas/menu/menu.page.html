@@ -10,16 +10,31 @@
 <ion-content>
   <ion-list>
     <ion-list-header>Listado de Platos</ion-list-header>
-    <ion-item *ngFor="let plato of listaPlatos">
+    <ion-item *ngFor="let comida of listaComida">
       <ion-avatar (click)="prueba(plato)" slot="start">
-        <img src={{plato.img1}}>
+        <img src={{comida.img1}}>
       </ion-avatar>
       <ion-label>
-        <h3>{{plato.nombre}}</h3>
-        <p>{{plato.descripcion}}</p>
-        <p>${{plato.precio}}</p>
+        <h3>{{comida.nombre}}</h3>
+        <p>{{comida.descripcion}}</p>
+        <p>${{comida.precio}}</p>
       </ion-label>
-      <ion-button color="success" (click)='agregar(plato)'><ion-icon name="add-circle-outline"></ion-icon></ion-button>
+      <ion-button color="success" (click)='agregar(comida)'><ion-icon name="add-circle-outline"></ion-icon></ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>Listado de Bebidas</ion-list-header>
+    <ion-item *ngFor="let bebida of listaBebida">
+      <ion-avatar slot="start">
+        <img src={{bebida.img1}}>
+      </ion-avatar>
+      <ion-label>
+        <h3>{{bebida.nombre}}</h3>
+        <p>{{bebida.descripcion}}</p>
+        <p>${{bebida.precio}}</p>
+      </ion-label>
+      <ion-button color="success" (click)='agregar(bebida)'><ion-icon name="add-circle-outline"></ion-icon></ion-button>
     </ion-item>
   </ion-list>
 </ion-content>

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
+import { DataService } from 'src/app/servicios/data.service';
+import { EncuestaService } from 'src/app/servicios/encuesta.service';
+import { PedidoService } from 'src/app/servicios/pedido.service';
 
 @Component({
   selector: 'app-encuesta',
@@ -10,9 +13,14 @@ import { ModalController } from '@ionic/angular';
 export class EncuestaComponent implements OnInit {
 
   form: FormGroup;
+  pedido: any;
+  usuario: any;
 
   constructor(private modal: ModalController,
-    private fb: FormBuilder) { }
+              private fb: FormBuilder,
+              public pedidoService: PedidoService,
+              private dataService: DataService,
+              private encuestaService: EncuestaService) { }
 
   ngOnInit() {
     this.form = this.fb.group({
@@ -21,6 +29,8 @@ export class EncuestaComponent implements OnInit {
       bebida: ['', Validators.required],
       consejo: ['', Validators.required]
     });
+
+    console.log(this.pedido);
   }
 
   closeModal() {
@@ -28,6 +38,21 @@ export class EncuestaComponent implements OnInit {
   }
 
   cargar() {
+    const { atencion, comida, bebida, consejo } = this.form.value;
 
+    let encuesta = {
+      atencion: atencion,
+      comida: comida,
+      bebida: bebida,
+      consejo: consejo,
+      pedido: this.pedido,
+      usuario: this.usuario
+    }
+
+    if(this.form.valid){
+      this.encuestaService.crearConUid(encuesta, this.pedido.uid).then( res => {
+        this.closeModal();
+      });
+    }
   }
 }

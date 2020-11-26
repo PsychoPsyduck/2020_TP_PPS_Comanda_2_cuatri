@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ToastrService } from 'ngx-toastr';
 import { Usuario } from 'src/app/clases/usuario';
+import { DetalleCuentaComponent } from 'src/app/componentes/detalle-cuenta/detalle-cuenta.component';
 import { EncuestaComponent } from 'src/app/componentes/encuesta/encuesta.component';
 import { JuegoComponent } from 'src/app/componentes/juego/juego.component';
 import { AuthService } from 'src/app/servicios/auth.service';
@@ -15,8 +16,8 @@ import { PedidoService } from 'src/app/servicios/pedido.service';
 })
 export class MiPedidoPage implements OnInit {
 
-  pedido:any;
-  user:any = new Usuario;
+  pedido: any;
+  user: any = new Usuario;
   pedidos;
 
   constructor(private modal: ModalController,
@@ -57,7 +58,8 @@ export class MiPedidoPage implements OnInit {
         this.modal.create({
           component: EncuestaComponent,
           componentProps: {
-            // pedido: this.items
+            pedido: this.pedido,
+            usuario: this.user
           }
         }).then((modal) => {
           //abre el modal si hay por lo menos un item seleccionado
@@ -71,7 +73,21 @@ export class MiPedidoPage implements OnInit {
         this.modal.create({
           component: JuegoComponent,
           componentProps: {
-            // pedido: this.items
+            pedido: this.pedido
+          }
+        }).then((modal) => {
+          //abre el modal si hay por lo menos un item seleccionado
+          if(true) {
+            modal.present();
+          }
+        });
+        break;
+
+      case "cuenta":
+        this.modal.create({
+          component: DetalleCuentaComponent,
+          componentProps: {
+            pedido: this.pedido
           }
         }).then((modal) => {
           //abre el modal si hay por lo menos un item seleccionado
