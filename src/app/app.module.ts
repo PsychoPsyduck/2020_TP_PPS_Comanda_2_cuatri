@@ -53,6 +53,7 @@ import { DetalleCuentaComponent } from './componentes/detalle-cuenta/detalle-cue
 import { DescuentoComponentePipe } from './pipes/descuento-componente.pipe';
 import { ConsultarMozoComponent } from './componentes/consultar-mozo/consultar-mozo.component';
 import { ImagenesComponent } from './componentes/imagenes/imagenes.component';
+import { VerPedidoComponent } from './componentes/ver-pedido/ver-pedido.component';
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import { ImagenesComponent } from './componentes/imagenes/imagenes.component';
     DetalleCuentaComponent,
     DescuentoComponentePipe,
     ImagenesComponent,
-    ConsultarMozoComponent
+    ConsultarMozoComponent,
+    VerPedidoComponent
     // EstadoPipe
   ],
   entryComponents: [PedidoComponent],

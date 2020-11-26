@@ -14,13 +14,15 @@
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXmfQIhnqTHQrptQZ1YwEka2EjCvB9UjBR3A&usqp=CAU">
 
     </ion-avatar>
-    <ion-label>
+    <ion-label (click)="openModal(item)">
       Mesa: {{item.mesa}}
-      <p>Ordenes: {{item.platos.length}}</p>
+      <p>Pedidos: {{item.platos.length}}</p>
       <p>Importe: {{item.total}}</p>
     </ion-label>
-    <ion-button (click)="tomarPedidoCocina(item)" color="success"><ion-icon name="fast-food-outline"></ion-icon></ion-button>
-    <ion-button (click)="tomarPedidoBar(item)" color="success"><ion-icon name="beer-outline"></ion-icon></ion-button>
+    <ion-button *ngIf="user.perfil == 'cocinero' && item.estadoCocina == 0" (click)="tomarPedidoCocina(item)" color="warning"><ion-icon name="fast-food-outline"></ion-icon></ion-button>
+    <ion-button *ngIf="user.perfil == 'cocinero' && item.estadoCocina == 1" color="success"><ion-icon name="checkbox-outline"></ion-icon></ion-button>
+    <ion-button *ngIf="user.perfil == 'bar' && item.estadoBar == 0" (click)="tomarPedidoBar(item)" color="warning"><ion-icon name="beer-outline"></ion-icon></ion-button>
+    <ion-button *ngIf="user.perfil == 'bar' && item.estadoBar == 1" color="success"><ion-icon name="checkbox-outline"></ion-icon></ion-button>
   </ion-item>
   <div *ngIf="lista.length == 0" style="display: flex; flex-direction: column; text-align: center; height: 100%; align-content: center;  flex-wrap: wrap; justify-content: center; font-family:Georgia, 'Times New Roman', Times, serif; opacity: 0.6;">
     <div>

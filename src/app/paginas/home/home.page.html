@@ -38,7 +38,7 @@
         <ion-icon color="danger" name="fast-food-outline" slot="start"></ion-icon>
         <ion-label>Pedidos pendientes</ion-label>
       </ion-item>
-      <ion-item *ngIf="user.perfil == 'cocinero'" (click)='ruteador("lista-pedidos-cocina")'>
+      <ion-item *ngIf="user.perfil == 'cocinero' || user.perfil == 'bar'" (click)='ruteador("lista-pedidos-cocina")'>
         <ion-icon color="danger" name="fast-food-outline" slot="start"></ion-icon>
         <ion-label>Pedidos en cocina</ion-label>
       </ion-item>
@@ -46,7 +46,7 @@
         <ion-icon color="success" name="fast-food-outline" slot="start"></ion-icon>
         <ion-label>Pedidos a entregar</ion-label>
       </ion-item>
-      <ion-item (click)='ruteador("lista-cobros")'>
+      <ion-item *ngIf="user.perfil == 'mozo' || user.perfil == 'admin'" (click)='ruteador("lista-cobros")'>
         <ion-icon color="danger" name="fast-food-outline" slot="start"></ion-icon>
         <ion-label>Pedidos a cobrar</ion-label>
       </ion-item>
