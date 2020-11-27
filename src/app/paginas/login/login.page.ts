@@ -40,12 +40,20 @@ export class LoginPage implements OnInit {
     
   }
 
-
   Entrar(){
     this.spiner = true;
     const { mail, clave } = this.form.value;
 
     this.authService.login(mail, clave).then( res => {
+      this.router.navigate(['/home']);
+      //this.spiner = false; 
+    }).catch(err => this.presentAlert(err));
+  }
+
+  EntrarAnonimo(){
+    this.spiner = true;
+
+    this.authService.login("nialsande@gmail.com", "123456").then( res => {
       this.router.navigate(['/home']);
       //this.spiner = false; 
     }).catch(err => this.presentAlert(err));

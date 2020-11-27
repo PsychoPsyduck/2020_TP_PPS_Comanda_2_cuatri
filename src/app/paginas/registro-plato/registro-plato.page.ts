@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { Usuario } from 'src/app/clases/usuario';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { DataService } from 'src/app/servicios/data.service';
 import { FotoService } from 'src/app/servicios/foto.service';
@@ -20,6 +21,8 @@ export class RegistroPlatoPage implements OnInit {
   esProfesional = false;
   esAdmin = false;
 
+  user:any = new Usuario;
+
   usuarios = [
     {value: 'admin', viewValue: 'Administrador'},
     {value: 'profesional', viewValue: 'Profesional'},
@@ -36,7 +39,8 @@ export class RegistroPlatoPage implements OnInit {
               private dataService: DataService,
               public router: Router, 
               public alertController: AlertController,
-              private fotoService: FotoService) { }
+              private fotoService: FotoService,
+              private auth:AuthService) { }
 
   ngOnInit() {
     this.form = this.fb.group({
@@ -48,6 +52,21 @@ export class RegistroPlatoPage implements OnInit {
       img2: ['', Validators.required],
       img3: ['', Validators.required]
     });
+
+  }
+
+  ionViewWillEnter() {
+    this.auth.getCurrentUserMail().then(res =>{
+      
+      this.dataService.getUserByUid(res.uid).subscribe(us =>{
+        this.user = us;
+        if(this.user.perfil == "bar") {
+          this.form.controls.tipo.setValue('Bebida');
+        } else if (this.user.perfil == "cocinero") {
+          this.form.controls.tipo.setValue('Comida');
+        }
+      })
+    })
   }
 
   crear(){

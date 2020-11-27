@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { DataService } from 'src/app/servicios/data.service';
 import { PedidoService } from 'src/app/servicios/pedido.service';
+import { UsuarioService } from 'src/app/servicios/usuario.service';
 
 @Component({
   selector: 'app-lista-cobros',
@@ -14,6 +15,7 @@ export class ListaCobrosPage implements OnInit {
   
   constructor(private dataService: DataService,
               private pedidoService: PedidoService,
+              private usuarioService: UsuarioService,
               private toas: ToastrService) { }
 
   ngOnInit() {
@@ -29,6 +31,7 @@ export class ListaCobrosPage implements OnInit {
       if (index > -1) {
         this.lista.splice(index, 1);
       }
+      this.usuarioService.liberarCliente(item.usuario.uid);
     });
   }
 }
