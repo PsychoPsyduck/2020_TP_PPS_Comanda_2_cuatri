@@ -76,39 +76,39 @@ _Sexta semana - 28/11_
 
 ## QR 🔲
 
-_Ingreso_</b>
-<img src="/src/assets/img/QR/entrada.png" style="width:50%" alt="">
+_Ingreso_</br>
+<img src="/src/assets/img/QR/entrada.png" style="width:10%" alt="">
 
-_Mesa 1_</b>
-<img src="/src/assets/img/QR/mesa1.png" style="width:50%" alt="">
+_Mesa 1_</br>
+<img src="/src/assets/img/QR/mesa1.png" style="width:10%" alt="">
 
-_Mesa 2_</b>
-<img src="/src/assets/img/QR/mesa2.png" style="width:50%" alt="">
+_Mesa 2_</br>
+<img src="/src/assets/img/QR/mesa2.png" style="width:10%" alt="">
 
-_Mesa 3_</b>
-<img src="/src/assets/img/QR/mesa3.png" style="width:50%" alt="">
+_Mesa 3_</br>
+<img src="/src/assets/img/QR/mesa3.png" style="width:10%" alt="">
 
-_Mesa 4_</b>
-<img src="/src/assets/img/QR/mesa4.png" style="width:50%" alt="">
+_Mesa 4_</br>
+<img src="/src/assets/img/QR/mesa4.png" style="width:10%" alt="">
 
-_Mesa 5_</b>
-<img src="/src/assets/img/QR/mesa5.png" style="width:50%" alt="">
+_Mesa 5_</br>
+<img src="/src/assets/img/QR/mesa5.png" style="width:10%" alt="">
 
 ## Paginas principales 📷
 
-_Inicio de sesion_</b>
+_Inicio de sesion_</br>
 <img src="/src/assets/img/gif-splash.gif" alt="">
 
-_Registro_</b>
+_Registro_</br>
 <img src="/src/assets/img/gif-splash.gif" alt="">
 
-_Inicio usuario_</b>
+_Inicio usuario_</br>
 <img src="/src/assets/img/gif-splash.gif" alt="">
 
-_Inicio empleado_</b>
+_Inicio empleado_</br>
 <img src="/src/assets/img/gif-splash.gif" alt="">
 
-_Menu lateral_</b>
+_Menu lateral_</br>
 <img src="/src/assets/img/gif-splash.gif" alt="">
 
 ---
