@@ -49,13 +49,14 @@ export class PedidoComponent implements OnInit {
 
     let pedido = {
       platos: this.pedido,
-      mesa: 1,
+      mesa: this.usuario.mesa.numero,
       total: importe,
       descuento: 0,
       estado: 0,
       usuario: this.usuario,
       estadoBar: 0,
-      estadoCocina: 0
+      estadoCocina: 0,
+      estadoEncuesta: 0
     }
 
     let sinCocina = pedido.platos.filter(x => x.tipo == "Comida" || x.tipo == "comida")
