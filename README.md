@@ -67,5 +67,49 @@ _Quinta semana - 21/11_
 -Manejo QR en mesa                              -Esposito<br>
 -Juego de descuento                             -Sande<br>
 
+_Sexta semana - 28/11_
+
+-Correccion de estilos varios                   -Esposito<br>
+-Notificaciones por mail                        -Sande<br>
+-Vista de imagenes en menu                      -Esposito<br>
+-Alta de comida y bebida segun perfil           -Sande<br>
+
+## QR 🔲
+
+_Ingreso_
+<img src="/src/assets/img/QR/entrada.png" alt="">
+
+_Mesa 1_
+<img src="/src/assets/img/QR/mesa1.png" alt="">
+
+_Mesa 2_
+<img src="/src/assets/img/QR/mesa2.png" alt="">
+
+_Mesa 3_
+<img src="/src/assets/img/QR/mesa3.png" alt="">
+
+_Mesa 4_
+<img src="/src/assets/img/QR/mesa4.png" alt="">
+
+_Mesa 5_
+<img src="/src/assets/img/QR/mesa5.png" alt="">
+
+## Paginas principales 📷
+
+_Inicio de sesion_
+<img src="/src/assets/img/gif-splash.gif" alt="">
+
+_Registro_
+<img src="/src/assets/img/gif-splash.gif" alt="">
+
+_Inicio usuario_
+<img src="/src/assets/img/gif-splash.gif" alt="">
+
+_Inicio empleado_
+<img src="/src/assets/img/gif-splash.gif" alt="">
+
+_Menu lateral_
+<img src="/src/assets/img/gif-splash.gif" alt="">
+
 ---
 ⌨️ _UTN-FRA_ ⌨️
