@@ -70,6 +70,8 @@ _Quinta semana - 21/11_
 _Sexta semana - 28/11_
 
 -Correccion de estilos varios                   -Esposito<br>
+-Correccion de funcionalidades                  -Sande<br>
+-Ingreso al local con QR                        -Esposito<br>
 -Notificaciones por mail                        -Sande<br>
 -Vista de imagenes en menu                      -Esposito<br>
 -Alta de comida y bebida segun perfil           -Sande<br>
@@ -97,19 +99,19 @@ _Mesa 5_</br>
 ## Paginas principales 📷
 
 _Inicio de sesion_</br>
-<img src="/src/assets/img/gif-splash.gif" alt="">
+<img src="/src/assets/img/Pantallas/Login.jpeg" alt="">
 
 _Registro_</br>
-<img src="/src/assets/img/gif-splash.gif" alt="">
+<img src="/src/assets/img/Pantallas/Registro.jpeg" alt="">
 
-_Inicio usuario_</br>
-<img src="/src/assets/img/gif-splash.gif" alt="">
+_Inicio cliente_</br>
+<img src="/src/assets/img/Pantallas/Inicio-cliente.jpeg" alt="">
 
 _Inicio empleado_</br>
-<img src="/src/assets/img/gif-splash.gif" alt="">
+<img src="/src/assets/img/Pantallas/Inicio-empleado.jpeg" alt="">
 
 _Menu lateral_</br>
-<img src="/src/assets/img/gif-splash.gif" alt="">
+<img src="/src/assets/img/Pantallas/Lateral.jpeg" alt="">
 
 ---
 ⌨️ _UTN-FRA_ ⌨️
