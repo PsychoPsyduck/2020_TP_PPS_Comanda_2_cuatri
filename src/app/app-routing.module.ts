@@ -91,7 +91,11 @@ const routes: Routes = [
   {
     path: 'chats',
     loadChildren: () => import('./paginas/chats/chats.module').then( m => m.ChatsPageModule)
+  },  {
+    path: 'rechazo-cliente',
+    loadChildren: () => import('./paginas/rechazo-cliente/rechazo-cliente.module').then( m => m.RechazoClientePageModule)
   }
+
 
 
 

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
+import { ToastrService } from 'ngx-toastr';
 import { Usuario } from 'src/app/clases/usuario';
+import { AuthService } from 'src/app/servicios/auth.service';
 import { DataService } from 'src/app/servicios/data.service';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 
@@ -16,7 +19,10 @@ export class PedidoComponent implements OnInit {
 
   constructor(private modal: ModalController,
               private dataService: DataService,
-              private userService: UsuarioService) { }
+              private userService: UsuarioService,
+              private auth:AuthService,
+              private router:Router,
+              private toas:ToastrService) { }
 
   ngOnInit() {}
 
@@ -65,7 +71,15 @@ export class PedidoComponent implements OnInit {
       
       this.closeModal();
 
-    });
+    });  
+
+    this.auth.updateEstadoUsuario(this.usuario.uid,4).then(res =>{
+      this.router.navigate(['/home']);
+
+      this.toas.success("Pedido confirmado con éxito");
+
+    }).catch(error =>{console.log(error)})
+    
   }
 
   closeModal() {

@@ -211,4 +211,31 @@ export class HomePage implements OnInit {
     );
     
   }
+
+  verEstadoPedido()
+  { 
+    this.barcodeScanner.scan().then(
+      barcodeData => {
+        const barcodeText = barcodeData.text;
+         
+        if (barcodeText === this.user.mesa.codigo) {
+
+          this.router.navigate(['/mi-pedido']);
+            
+          
+        } else {
+          this.toast.error('Qr de mesa inválido.');
+  
+        }
+      },
+      error => {
+        // Hardcodeo
+        // this.infoReserva();
+        this.toast.error(error,'Se produjo un error');
+
+        console.log('Hubo un error', error);
+      }
+    );
+
+  }
 }
