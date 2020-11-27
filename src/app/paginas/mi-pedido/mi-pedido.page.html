@@ -38,10 +38,11 @@
       </ion-list>
     </ion-card-content>
 
-    <ion-button (click)='llegoPedido(pedido)'>Llegó pedido?</ion-button>
-    <ion-button (click)='openModal("cuenta")'>Pedir cuenta</ion-button>
-    <ion-button *ngIf="pedido.estadoEncuesta == 0" (click)='openModal("encuesta")'>Encuesta</ion-button>
-    <ion-button *ngIf="pedido.descuento == 0" (click)='openModal("juego")'>Juego</ion-button>
+    <ion-button *ngIf="pedido.estado == 3" (click)='llegoPedido(pedido)'>Llegó pedido?</ion-button>
+    <ion-button *ngIf="pedido.estado == 4" (click)='openModal("cuenta")'>Pedir cuenta</ion-button>
+    <ion-button *ngIf="pedido.estadoEncuesta == 0 && pedido.estado == 4" (click)='openModal("encuesta")'>Encuesta</ion-button>
+    <ion-button *ngIf="pedido.descuento == 0 && pedido.estado != 6 && pedido.estado != 5" (click)='openModal("juego")'>Juego</ion-button>
+    <ion-button *ngIf="pedido.estado == 6" (click)='salir("juego")'>Retirarse</ion-button>
   </ion-card>
   
 

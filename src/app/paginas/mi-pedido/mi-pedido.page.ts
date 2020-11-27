@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { ToastrService } from 'ngx-toastr';
 import { Usuario } from 'src/app/clases/usuario';
@@ -24,7 +25,8 @@ export class MiPedidoPage implements OnInit {
               private auth: AuthService,
               private data: DataService,
               private pedidoService: PedidoService,
-              private toas: ToastrService) { }
+              private toas: ToastrService,
+              public router: Router) { }
 
   ngOnInit() {
     this.auth.getCurrentUserMail().then(res =>{
@@ -109,5 +111,10 @@ export class MiPedidoPage implements OnInit {
       //   this.lista.splice(index, 1);
       // }
     });
+  }
+
+  salir() {
+    this.auth.logOut();
+    this.router.navigated['./login.page']
   }
 }

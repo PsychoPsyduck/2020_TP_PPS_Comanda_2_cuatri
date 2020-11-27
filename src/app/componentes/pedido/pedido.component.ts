@@ -49,7 +49,8 @@ export class PedidoComponent implements OnInit {
       estado: 0,
       usuario: this.usuario,
       estadoBar: 0,
-      estadoCocina: 0
+      estadoCocina: 0,
+      estadoEncuesta: 0
     }
 
     let sinCocina = pedido.platos.filter(x => x.tipo == "Comida" || x.tipo == "comida")

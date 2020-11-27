@@ -8,6 +8,8 @@ export class EstadoPipe implements PipeTransform {
   transform(estado: number): string {
     
     switch (estado) {
+      case 0:
+        return "Pedido pendiente"
       case 1:
         return "Pedido relevado"
       case 2:
@@ -18,6 +20,8 @@ export class EstadoPipe implements PipeTransform {
         return "Pedido en mesa"
       case 5:
         return "Pidio la cuenta"
+      case 6:
+        return "Pago confirmado"
     }
   }
 }
