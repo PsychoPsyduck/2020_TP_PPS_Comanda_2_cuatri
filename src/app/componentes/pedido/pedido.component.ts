@@ -43,7 +43,7 @@ export class PedidoComponent implements OnInit {
 
     let pedido = {
       platos: this.pedido,
-      mesa: 1,
+      mesa: this.usuario.mesa.numero,
       total: importe,
       descuento: 0,
       estado: 0,
