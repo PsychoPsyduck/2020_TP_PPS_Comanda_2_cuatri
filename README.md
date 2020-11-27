@@ -77,10 +77,10 @@ _Sexta semana - 28/11_
 ## QR 🔲
 
 _Ingreso_</br>
-<img src="/src/assets/img/QR/entrada.png" style="width: 1em" alt="">
+<img src="/src/assets/img/QR/entrada.png" height="24" width="48" alt="">
 
 _Mesa 1_</br>
-<img src="/src/assets/img/QR/mesa1.png" style="width:10%" alt="">
+<img src="/src/assets/img/QR/mesa1.png" style="width: 20px" alt="">
 
 _Mesa 2_</br>
 <img src="/src/assets/img/QR/mesa2.png" style="width: 20px" alt="">
