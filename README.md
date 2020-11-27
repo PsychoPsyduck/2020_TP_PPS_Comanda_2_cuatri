@@ -77,19 +77,19 @@ _Sexta semana - 28/11_
 ## QR 🔲
 
 _Ingreso_</br>
-<img src="/src/assets/img/QR/entrada.png" style="width:10%" alt="">
+<img src="/src/assets/img/QR/entrada.png" style="width: 1em" alt="">
 
 _Mesa 1_</br>
 <img src="/src/assets/img/QR/mesa1.png" style="width:10%" alt="">
 
 _Mesa 2_</br>
-<img src="/src/assets/img/QR/mesa2.png" style="width:10%" alt="">
+<img src="/src/assets/img/QR/mesa2.png" style="width: 20px" alt="">
 
 _Mesa 3_</br>
-<img src="/src/assets/img/QR/mesa3.png" style="width:10%" alt="">
+<img src="/src/assets/img/QR/mesa3.png" style="width: 30px" alt="">
 
 _Mesa 4_</br>
-<img src="/src/assets/img/QR/mesa4.png" style="width:10%" alt="">
+<img src="/src/assets/img/QR/mesa4.png" style="width: 2em" alt="">
 
 _Mesa 5_</br>
 <img src="/src/assets/img/QR/mesa5.png" style="width:10%" alt="">
