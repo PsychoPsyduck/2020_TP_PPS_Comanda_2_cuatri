@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { ToastrService } from 'ngx-toastr';
 import { Usuario } from 'src/app/clases/usuario';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { DataService } from 'src/app/servicios/data.service';
@@ -40,13 +41,14 @@ export class RegistroPlatoPage implements OnInit {
               public router: Router, 
               public alertController: AlertController,
               private fotoService: FotoService,
-              private auth:AuthService) { }
+              private auth:AuthService,
+              public toas:ToastrService) { }
 
   ngOnInit() {
     this.form = this.fb.group({
       nombre: ['', Validators.required],
       descripcion: ['', Validators.required],
-      precio: ['', Validators.required],
+      precio: [0, Validators.required],
       tipo: ['', Validators.required],
       img1: ['', Validators.required],
       img2: ['', Validators.required],
@@ -85,7 +87,11 @@ export class RegistroPlatoPage implements OnInit {
     if (this.form.valid) {
       this.dataService.crear("platos", plato).then(res => {
         console.log("llega bien perri")
-      }).catch(err => console.log(err));;
+        this.toas.success("Plato registrado con éxito");
+        this.limpiarForm();
+      }).catch(err => {console.log(err)
+        this.toas.error("Ocurrió un error a la hora del Registro");
+      });;
     }
   }
 
@@ -131,5 +137,16 @@ export class RegistroPlatoPage implements OnInit {
       .catch(err => {
         // this.toastService.errorToast('Error: No se ha podido guardar la foto. ' + err.message);
       })
+  }
+
+  limpiarForm() {
+    this.form.controls.nombre.setValue('');
+    this.form.controls.descripcion.setValue('');
+    this.form.controls.precio.setValue(0);
+    this.form.controls.img1.setValue('');
+    this.form.controls.img2.setValue('');
+    this.form.controls.img3.setValue('');
+
+    this.form.reset();
   }
 }
