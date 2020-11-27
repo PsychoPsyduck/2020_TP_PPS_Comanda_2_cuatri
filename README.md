@@ -80,19 +80,19 @@ _Ingreso_</br>
 <img src="/src/assets/img/QR/entrada.png" height="24" width="48" alt="">
 
 _Mesa 1_</br>
-<img src="/src/assets/img/QR/mesa1.png" style="width: 20px" alt="">
+<img src="/src/assets/img/QR/mesa1.png" height="24" width="48" alt="">
 
 _Mesa 2_</br>
-<img src="/src/assets/img/QR/mesa2.png" style="width: 20px" alt="">
+<img src="/src/assets/img/QR/mesa2.png" height="24" width="48" alt="">
 
 _Mesa 3_</br>
-<img src="/src/assets/img/QR/mesa3.png" style="width: 30px" alt="">
+<img src="/src/assets/img/QR/mesa3.png" height="24" width="48" alt="">
 
 _Mesa 4_</br>
-<img src="/src/assets/img/QR/mesa4.png" style="width: 2em" alt="">
+<img src="/src/assets/img/QR/mesa4.png" height="24" width="48" alt="">
 
 _Mesa 5_</br>
-<img src="/src/assets/img/QR/mesa5.png" style="width:10%" alt="">
+<img src="/src/assets/img/QR/mesa5.png" height="24" width="48" alt="">
 
 ## Paginas principales 📷
 
