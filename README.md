@@ -67,5 +67,49 @@ _Quinta semana - 21/11_
 -Manejo QR en mesa                              -Esposito<br>
 -Juego de descuento                             -Sande<br>
 
+_Sexta semana - 28/11_
+
+-Correccion de estilos varios                   -Esposito<br>
+-Notificaciones por mail                        -Sande<br>
+-Vista de imagenes en menu                      -Esposito<br>
+-Alta de comida y bebida segun perfil           -Sande<br>
+
+## QR 🔲
+
+_Ingreso_</br>
+<img src="/src/assets/img/QR/entrada.png" height="200" width="200" alt="">
+
+_Mesa 1_</br>
+<img src="/src/assets/img/QR/mesa1.png" height="200" width="200" alt="">
+
+_Mesa 2_</br>
+<img src="/src/assets/img/QR/mesa2.png" height="200" width="200" alt="">
+
+_Mesa 3_</br>
+<img src="/src/assets/img/QR/mesa3.png" height="200" width="200" alt="">
+
+_Mesa 4_</br>
+<img src="/src/assets/img/QR/mesa4.png" height="200" width="200" alt="">
+
+_Mesa 5_</br>
+<img src="/src/assets/img/QR/mesa5.png" height="200" width="200" alt="">
+
+## Paginas principales 📷
+
+_Inicio de sesion_</br>
+<img src="/src/assets/img/gif-splash.gif" alt="">
+
+_Registro_</br>
+<img src="/src/assets/img/gif-splash.gif" alt="">
+
+_Inicio usuario_</br>
+<img src="/src/assets/img/gif-splash.gif" alt="">
+
+_Inicio empleado_</br>
+<img src="/src/assets/img/gif-splash.gif" alt="">
+
+_Menu lateral_</br>
+<img src="/src/assets/img/gif-splash.gif" alt="">
+
 ---
 ⌨️ _UTN-FRA_ ⌨️
