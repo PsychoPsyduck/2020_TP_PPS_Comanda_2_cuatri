@@ -77,22 +77,22 @@ _Sexta semana - 28/11_
 ## QR 🔲
 
 _Ingreso_</br>
-<img src="/src/assets/img/QR/entrada.png" height="24" width="48" alt="">
+<img src="/src/assets/img/QR/entrada.png" height="125" width="125" alt="">
 
 _Mesa 1_</br>
-<img src="/src/assets/img/QR/mesa1.png" height="24" width="48" alt="">
+<img src="/src/assets/img/QR/mesa1.png" height="125" width="125" alt="">
 
 _Mesa 2_</br>
-<img src="/src/assets/img/QR/mesa2.png" height="24" width="48" alt="">
+<img src="/src/assets/img/QR/mesa2.png" height="125" width="125" alt="">
 
 _Mesa 3_</br>
-<img src="/src/assets/img/QR/mesa3.png" height="24" width="48" alt="">
+<img src="/src/assets/img/QR/mesa3.png" height="125" width="125" alt="">
 
 _Mesa 4_</br>
-<img src="/src/assets/img/QR/mesa4.png" height="24" width="48" alt="">
+<img src="/src/assets/img/QR/mesa4.png" height="125" width="125" alt="">
 
 _Mesa 5_</br>
-<img src="/src/assets/img/QR/mesa5.png" height="24" width="48" alt="">
+<img src="/src/assets/img/QR/mesa5.png" height="125" width="125" alt="">
 
 ## Paginas principales 📷
 
