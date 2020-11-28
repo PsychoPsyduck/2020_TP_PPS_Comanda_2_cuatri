@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { Usuario } from 'src/app/clases/usuario';
+import { AuthService } from 'src/app/servicios/auth.service';
 import { DataService } from 'src/app/servicios/data.service';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 
@@ -16,7 +17,7 @@ export class RespuestaMozoComponent implements OnInit {
   consultaRecibida:any;
   consulta:any;
   mensaje:any
-  constructor(private modal: ModalController,private data:DataService, private cons:UsuarioService) { }
+  constructor(private modal: ModalController,private data:DataService, private cons:UsuarioService, private auth:AuthService) { }
 
   ngOnInit() {
 
@@ -34,8 +35,11 @@ export class RespuestaMozoComponent implements OnInit {
     console.log("llega");
       this.cons.responderConsulta(this.consultaRecibida.id,this.mensaje,this.mozo).then(res=>{
         console.log("Se respondió bien");
+        this.auth.registrar("dYMXr1MLTQetBD39hSUR4B:APA91bFCFeJ2TkMGtfhvd2rZDuLqJaip2TEylJHCw_tXVzFkKnwyhvZ-X6ztBXINBjSZMS0N64Sd0L80FPJe3zu-45cuSV7rUn-hqHxtqIp3TNmfMqGTrbBJxrjmm3qFAqg2kFlHr61i","Respuesta Mozo",this.mensaje,"https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2019/06/25/15614775255199.jpg").toPromise().then(res =>{
+                console.info(res);
+                this.mensaje = "";
+              }) 
       })
-      this.mensaje = "";
 
   }
 

@@ -106,7 +106,7 @@ export class RegistroClientePage implements OnInit {
           this.authService.register(usuario.mail, usuario.pass, usuario).then(res => {
               //console.log("llega bien perri");
               this.toas.success("Cliente registrado con éxito");
-              this.authService.registrar("dYMXr1MLTQetBD39hSUR4B:APA91bFCFeJ2TkMGtfhvd2rZDuLqJaip2TEylJHCw_tXVzFkKnwyhvZ-X6ztBXINBjSZMS0N64Sd0L80FPJe3zu-45cuSV7rUn-hqHxtqIp3TNmfMqGTrbBJxrjmm3qFAqg2kFlHr61i","Nuevo usuario","Confirmar Usuario",usuario.img).toPromise().then(res =>{
+              this.authService.registrar("ciOp3MGpT6-wcBBIyYa29v:APA91bE32-AmKVkpqTWDj3Mf3-55CnxSSYdVc0_dmgi7eRbXE7uYcmP2rQNg0Z9msTU31YES5MMxhqc-c53HcFOviRzQk5bODdX3BnfRk3YVFf7oYCCJ8tGfGmx1GqWjyb1IgAtmSibJ","Nuevo usuario","Confirmar Usuario",usuario.img).toPromise().then(res =>{
                 console.info(res);
               })
     

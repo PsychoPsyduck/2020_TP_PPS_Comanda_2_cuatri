@@ -8,35 +8,41 @@
 </ion-header>
 
 <ion-content style="--background:white">  
-  <ion-toolbar  class="tarj" style="margin-top: 9rem; --background:black; margin-bottom: 7rem;">
-    <ion-title>Datos</ion-title>
-    <br>
-    <form [formGroup]="form" >
-      <ion-item class="full-width-input">
-        <ion-label position='floating'>Atencion</ion-label>
-        <ion-input type="text" formControlName="atencion"></ion-input> 
-      </ion-item>
+  <div class="centrar">
+
+    <ion-toolbar  class="centrar" style="margin-top: 9rem; --background:black; margin-bottom: 7rem; width: 80%; padding: 1rem;">
+      <ion-title style="text-align: center;">Datos</ion-title>
       <br>
-      <ion-item class="full-width-input">
-        <ion-label position='floating'>Comida</ion-label>
-        <ion-input type="text" formControlName="comida"></ion-input> 
-      </ion-item>
-      <br>
-      <ion-item class="full-width-input">
-        <ion-label position='floating'>Bebida</ion-label>
-        <ion-input type="text" formControlName="bebida"></ion-input> 
-      </ion-item>
-      <br>
-      <ion-item class="full-width-input">
-        <ion-label position='floating'>Consejo</ion-label>
-        <ion-input type="text" formControlName="consejo"></ion-input> 
-      </ion-item>
-      <br>
-    
+      <form [formGroup]="form" >
+        <ion-item class="full-width-input">
+          <ion-label position='floating'>Atencion</ion-label>
+          <ion-input type="text" formControlName="atencion"></ion-input> 
+        </ion-item>
+        <br>
+        <ion-item class="full-width-input">
+          <ion-label position='floating'>Comida</ion-label>
+          <ion-input type="text" formControlName="comida"></ion-input> 
+        </ion-item>
+        <br>
+        <ion-item class="full-width-input">
+          <ion-label position='floating'>Bebida</ion-label>
+          <ion-input type="text" formControlName="bebida"></ion-input> 
+        </ion-item>
+        <br>
+        <ion-item class="full-width-input">
+          <ion-label position='floating'>Consejo</ion-label>
+          <ion-input type="text" formControlName="consejo"></ion-input> 
+        </ion-item>
+        <br>
       
-      <ion-button style="width: 50%;" [disabled]="!form.value" color='secondary'  (click)="cargar()">Cargar</ion-button>
-      <!-- <ion-button [hidden]="!ocultarVerificar" color="secondary" *ngIf="logeando"  (click)="Entrar()"><i class="fa fa-spinner fa-spin"></i> Ingresando</ion-button> -->
-      
-    </form>
-  </ion-toolbar>
+        
+        <div class="centrar">
+
+          <ion-button style="width: 50%;" [disabled]="!form.value" color='secondary'  (click)="cargar()">Cargar</ion-button>
+        </div>
+       
+        
+      </form>
+    </ion-toolbar>
+  </div>
 </ion-content>

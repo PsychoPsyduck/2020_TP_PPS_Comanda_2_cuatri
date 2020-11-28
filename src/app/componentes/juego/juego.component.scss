@@ -34,7 +34,43 @@
 }
 
 .container{
-    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    padding: 2rem;
+    border-radius: 2rem;
+    -webkit-box-shadow: 14px 7px 25px -5px rgba(0,0,0,0.75);
+-moz-box-shadow: 14px 7px 25px -5px rgba(0,0,0,0.75);
+box-shadow: 14px 7px 25px -5px rgba(0,0,0,0.75);
+
+}
+.centrar{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+   
+}
+.botones{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+
+
+
 }
 
 /* .comenzar{

@@ -165,7 +165,7 @@ export class HomePage implements OnInit {
           this.auth.updateEstadoUsuario(this.user.uid,2).then(res =>{
 
             this.toast.success("Solicitud de Mesa registrada con éxito");
-            this.auth.registrar("ciOp3MGpT6-wcBBIyYa29v:APA91bE32-AmKVkpqTWDj3Mf3-55CnxSSYdVc0_dmgi7eRbXE7uYcmP2rQNg0Z9msTU31YES5MMxhqc-c53HcFOviRzQk5bODdX3BnfRk3YVFf7oYCCJ8tGfGmx1GqWjyb1IgAtmSibJ","Nuevo Cliente", this.user.mail + "Solicita una mesa","https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2019/06/25/15614775255199.jpg").toPromise().then(res =>{
+            this.auth.registrar("ciOp3MGpT6-wcBBIyYa29v:APA91bE32-AmKVkpqTWDj3Mf3-55CnxSSYdVc0_dmgi7eRbXE7uYcmP2rQNg0Z9msTU31YES5MMxhqc-c53HcFOviRzQk5bODdX3BnfRk3YVFf7oYCCJ8tGfGmx1GqWjyb1IgAtmSibJ","Nuevo Cliente", this.user.mail + " Solicita una mesa","https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2019/06/25/15614775255199.jpg").toPromise().then(res =>{
               console.info(res);
             })
           })
@@ -210,5 +210,32 @@ export class HomePage implements OnInit {
       }
     );
     
+  }
+
+  verEstadoPedido()
+  { 
+    this.barcodeScanner.scan().then(
+      barcodeData => {
+        const barcodeText = barcodeData.text;
+         
+        if (barcodeText === this.user.mesa.codigo) {
+
+          this.router.navigate(['/mi-pedido']);
+            
+          
+        } else {
+          this.toast.error('Qr de mesa inválido.');
+  
+        }
+      },
+      error => {
+        // Hardcodeo
+        // this.infoReserva();
+        this.toast.error(error,'Se produjo un error');
+
+        console.log('Hubo un error', error);
+      }
+    );
+
   }
 }

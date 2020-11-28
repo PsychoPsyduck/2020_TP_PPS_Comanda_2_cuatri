@@ -98,8 +98,12 @@
        <img style=" width: 100%; height: 100%;" src="../../../assets/img/fila.jpg" alt="">
       </div>
 
-      <div *ngIf="user.estado != 2 && user.perfil == 'Cliente'" class="cards" (click)="ingresar()">
+      <div *ngIf="user.estado == 1 && user.perfil == 'Cliente'" class="cards" (click)="ingresar()">
         <ion-label class="label">Pedir Mesa</ion-label>
+       <img style=" width: 100%; height: 100%;" src="../../../assets/img/menu.png" alt="">
+      </div>
+      <div *ngIf="user.estado == 4 && user.perfil == 'Cliente'" class="cards" (click)="verEstadoPedido()">
+        <ion-label class="label">Estado Pedido</ion-label>
        <img style=" width: 100%; height: 100%;" src="../../../assets/img/menu.png" alt="">
       </div>
       <div *ngIf="user.estado == 3 && user.perfil == 'Cliente'" class="cards" (click)="sentarse()">
@@ -117,6 +121,11 @@
       <div *ngIf="user.perfil == 'admin'" class="cards" (click)='ruteador("lista-autorizar")'>
         <ion-label class="label">Clientes a Ingresar</ion-label>
        <img style=" width: 100%; height: 100%;" src="../../../assets/img/usuario.jpg" alt="">
+      </div>
+
+      <div *ngIf="user.perfil == 'bar'" class="cards" (click)='ruteador("lista-pedidos-cocina")'>
+        <ion-label class="label">Pedidos Bar</ion-label>
+       <img style=" width: 100%; height: 100%;" src="../../../assets/img/birra.jpg" alt="">
       </div>
 
        <!-- <div (click)="prueba()" style="background-color: rgb(141, 31, 31); height: auto;" *ngIf="user.estado == 2" class="cards" >

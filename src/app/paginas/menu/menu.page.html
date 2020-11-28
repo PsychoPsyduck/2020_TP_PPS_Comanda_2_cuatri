@@ -11,7 +11,7 @@
   <ion-list>
     <ion-list-header>Listado de Platos</ion-list-header>
     <ion-item *ngFor="let comida of listaComida">
-      <ion-avatar (click)="prueba(plato)" slot="start">
+      <ion-avatar (click)="prueba(comida)" slot="start">
         <img src={{comida.img1}}>
       </ion-avatar>
       <ion-label>
@@ -22,11 +22,11 @@
       <ion-button color="success" (click)='agregar(comida)'><ion-icon name="add-circle-outline"></ion-icon></ion-button>
     </ion-item>
   </ion-list>
-
+  
   <ion-list>
     <ion-list-header>Listado de Bebidas</ion-list-header>
     <ion-item *ngFor="let bebida of listaBebida">
-      <ion-avatar slot="start">
+      <ion-avatar (click)="prueba(bebida)" slot="start">
         <img src={{bebida.img1}}>
       </ion-avatar>
       <ion-label>

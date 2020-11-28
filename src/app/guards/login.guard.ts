@@ -43,8 +43,17 @@ export class LoginGuard implements CanActivate {
 
                           }
                           else
-                          {
-                            resolve(true)
+                          { 
+
+                            if(usuario.estado == -1)
+                            {
+                              this.route.navigate(['rechazo-cliente']);
+                            }
+                            else
+                            {
+                              resolve(true)
+
+                            }
 
                           }
                          

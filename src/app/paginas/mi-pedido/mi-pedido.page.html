@@ -7,25 +7,25 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content style=" --background:white;">
   <ion-card *ngIf="pedido">
-    <ion-item-group>
-      <ion-card-title>Estado: {{pedido.estado | estado}}</ion-card-title>
-      <ion-item-divider></ion-item-divider>
+    <ion-item-group style="margin-top: 1rem; margin-bottom: 4rem;">
+      <ion-card-title style="text-align: center;"> <strong style="color: rgb(239, 255, 13);">{{pedido.estado | estado}}</strong> </ion-card-title>
       <ion-item>
-        <ion-label>Mesa: {{pedido.mesa}}</ion-label>
+        <ion-label>Mesa N° {{pedido.mesa}}</ion-label>
       </ion-item>
       <ion-item>
         <ion-label>Descuento: {{pedido.descuento | descuento}}</ion-label>
       </ion-item>
       <ion-item>
-        <ion-label>Total: ${{pedido.total}}</ion-label>
+        <ion-label >Total: <strong style="color: rgb(33, 199, 33);">${{pedido.total}}</strong> </ion-label>
       </ion-item>
     </ion-item-group>
-    
+  </ion-card>
+<ion-card *ngIf="pedido">
     <ion-card-content>
       <ion-list>
-        <ion-card-title>Usted ordenó:</ion-card-title>
+        <ion-card-title>Detalle de orden:</ion-card-title>
         <ion-item *ngFor="let plato of pedido.platos">
           <ion-avatar slot="start">
             <img src={{plato.img1}}>
@@ -37,12 +37,15 @@
         </ion-item>
       </ion-list>
     </ion-card-content>
+    
+    <div class="botones">
+      <ion-button *ngIf="pedido.estado == 3" (click)='llegoPedido(pedido)'>Llegó pedido</ion-button>
+      <ion-button *ngIf="pedido.estado == 4" (click)='openModal("cuenta")'>Pedir cuenta</ion-button>
+      <ion-button *ngIf="pedido.estadoEncuesta == 0 && pedido.estado == 4" (click)='openModal("encuesta")'>Encuesta</ion-button>
+      <ion-button *ngIf="pedido.descuento == 0 && pedido.estado != 6 && pedido.estado != 5" (click)='openModal("juego")'>Juego</ion-button>
+      <ion-button *ngIf="pedido.estado == 6" (click)='salir("juego")'>Retirarse</ion-button>
 
-    <ion-button *ngIf="pedido.estado == 3" (click)='llegoPedido(pedido)'>Llegó pedido?</ion-button>
-    <ion-button *ngIf="pedido.estado == 4" (click)='openModal("cuenta")'>Pedir cuenta</ion-button>
-    <ion-button *ngIf="pedido.estadoEncuesta == 0 && pedido.estado == 4" (click)='openModal("encuesta")'>Encuesta</ion-button>
-    <ion-button *ngIf="pedido.descuento == 0 && pedido.estado != 6 && pedido.estado != 5" (click)='openModal("juego")'>Juego</ion-button>
-    <ion-button *ngIf="pedido.estado == 6" (click)='salir("juego")'>Retirarse</ion-button>
+    </div>
   </ion-card>
   
 

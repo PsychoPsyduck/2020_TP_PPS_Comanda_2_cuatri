@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/servicios/auth.service';
 import { PedidoService } from 'src/app/servicios/pedido.service';
 import { DataService } from '../../servicios/data.service';
 
@@ -14,7 +15,8 @@ export class ListaPedidosPage implements OnInit {
   
   constructor(private dataService: DataService,
               private pedidoService: PedidoService,
-              private toas: ToastrService) { }
+              private toas: ToastrService,
+              private auth:AuthService) { }
 
   ngOnInit() {
     this.dataService.getPedidos().subscribe(res=>{ 
@@ -29,6 +31,15 @@ export class ListaPedidosPage implements OnInit {
       if (index > -1) {
         this.lista.splice(index, 1);
       }
+      
+        this.auth.registrar("ciOp3MGpT6-wcBBIyYa29v:APA91bE32-AmKVkpqTWDj3Mf3-55CnxSSYdVc0_dmgi7eRbXE7uYcmP2rQNg0Z9msTU31YES5MMxhqc-c53HcFOviRzQk5bODdX3BnfRk3YVFf7oYCCJ8tGfGmx1GqWjyb1IgAtmSibJ","Nueva Comida", "Solicita la  mesa N° "+ item.mesa,"https://images.clarin.com/2019/11/27/las-minutas-son-la-opcion___9YsE7sRJ_340x340__1.jpg").toPromise().then(res =>{
+          console.info(res);
+        })
+        this.auth.registrar("ciOp3MGpT6-wcBBIyYa29v:APA91bE32-AmKVkpqTWDj3Mf3-55CnxSSYdVc0_dmgi7eRbXE7uYcmP2rQNg0Z9msTU31YES5MMxhqc-c53HcFOviRzQk5bODdX3BnfRk3YVFf7oYCCJ8tGfGmx1GqWjyb1IgAtmSibJ","Nuevo Bebida",  "Solicita la  mesa N° "+ item.mesa,"https://mercedesya.com/mya2018/images/biblioteca/800/00005362.jpg").toPromise().then(res =>{
+          console.info(res);
+        })
+        
+     
     });
   }
 }

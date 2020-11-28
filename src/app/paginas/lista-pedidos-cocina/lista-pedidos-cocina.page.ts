@@ -41,6 +41,9 @@ export class ListaPedidosCocinaPage implements OnInit {
   tomarPedidoCocina(item) {
     this.pedidoService.updateEstadoCocina(item.uid, 1).then(res =>{
       this.toas.success("Se ha entregado la comida");
+      this.auth.registrar("ciOp3MGpT6-wcBBIyYa29v:APA91bE32-AmKVkpqTWDj3Mf3-55CnxSSYdVc0_dmgi7eRbXE7uYcmP2rQNg0Z9msTU31YES5MMxhqc-c53HcFOviRzQk5bODdX3BnfRk3YVFf7oYCCJ8tGfGmx1GqWjyb1IgAtmSibJ","Cocina Notifica", "Pedido de mesa N° "+ item.usuario.mesa.numero +" listo" ,"https://images.clarin.com/2019/11/27/las-minutas-son-la-opcion___9YsE7sRJ_340x340__1.jpg").toPromise().then(res =>{
+        console.info(res);
+      })
       if(item.estadoBar == 1) {
         this.pedidoService.updateEstado(item.uid, 2).then(res =>{
           this.toas.success("El pedido esta listo");
@@ -56,6 +59,9 @@ export class ListaPedidosCocinaPage implements OnInit {
   tomarPedidoBar(item) {
     this.pedidoService.updateEstadoBar(item.uid, 1).then(res =>{
       this.toas.success("Se ha entregado la bebida");
+      this.auth.registrar("ciOp3MGpT6-wcBBIyYa29v:APA91bE32-AmKVkpqTWDj3Mf3-55CnxSSYdVc0_dmgi7eRbXE7uYcmP2rQNg0Z9msTU31YES5MMxhqc-c53HcFOviRzQk5bODdX3BnfRk3YVFf7oYCCJ8tGfGmx1GqWjyb1IgAtmSibJ","Bar Notifica", "Pedido de mesa N° "+ item.usuario.mesa.numero +" listo" ,"https://mercedesya.com/mya2018/images/biblioteca/800/00005362.jpg").toPromise().then(res =>{
+        console.info(res);
+      })
       if(item.estadoCocina == 1) {
         this.pedidoService.updateEstado(item.uid, 2).then(res =>{
           this.toas.success("El pedido esta listo");
