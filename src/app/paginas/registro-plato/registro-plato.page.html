@@ -35,22 +35,46 @@
       </ion-item>
       <br>
       <ion-item class="full-width-input">
-        <ion-label position='floating'>Foto 1: </ion-label>
-        <ion-input type="text" formControlName="img1" readonly></ion-input> 
+        <div class="fotos">
+          <div style="width: 70%;">
+            <ion-label position='floating'>Foto 1: </ion-label>
+            <ion-input type="text" formControlName="img1" readonly></ion-input> 
+
+          </div>
+          <div class="botonCamera">
+            <ion-button style="width: 50%;" color='secondary' (click)="tomarFoto('img1')"><ion-icon name="camera-outline"></ion-icon></ion-button>
+          </div>
+
+        </div>
       </ion-item>
-      <ion-button style="width: 50%;" color='secondary' (click)="tomarFoto('img1')">Foto</ion-button>
       <br>
       <ion-item class="full-width-input">
-        <ion-label position='floating'>Foto 2: </ion-label>
-        <ion-input type="text" formControlName="img2" readonly></ion-input> 
+        <div class="fotos">
+          <div style="width: 70%;">
+            <ion-label position='floating'>Foto 2: </ion-label>
+            <ion-input type="text" formControlName="img2" readonly></ion-input> 
+
+          </div>
+          <div class="botonCamera">
+            <ion-button style="width: 50%;" color='secondary' (click)="tomarFoto('img2')"><ion-icon name="camera-outline"></ion-icon></ion-button>
+
+          </div>
+        </div>
       </ion-item>
-      <ion-button style="width: 50%;" color='secondary' (click)="tomarFoto('img2')">Foto</ion-button>
       <br>
       <ion-item class="full-width-input">
-        <ion-label position='floating'>Foto 3: </ion-label>
-        <ion-input type="text" formControlName="img3" readonly></ion-input> 
+        <div class="fotos">
+          <div style="width: 70%;">
+            <ion-label position='floating'>Foto 3: </ion-label>
+            <ion-input type="text" formControlName="img3" readonly></ion-input> 
+
+          </div>
+          <div class="botonCamera">
+            <ion-button style="width: 50%;" color='secondary' (click)="tomarFoto('img3')"><ion-icon name="camera-outline"></ion-icon></ion-button>
+
+          </div>
+        </div>
       </ion-item>
-      <ion-button style="width: 50%;" color='secondary' (click)="tomarFoto('img3')">Foto</ion-button>
       <br>
 
       <ion-button style="width: 50%;" [hidden]="ocultarVerificar"  color='secondary' *ngIf="logeando"  (click)="crear()">Crear</ion-button>
