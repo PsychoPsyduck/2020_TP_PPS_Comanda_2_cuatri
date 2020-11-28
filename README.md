@@ -99,19 +99,19 @@ _Mesa 5_</br>
 ## Paginas principales 📷
 
 _Inicio de sesion_</br>
-<img src="/src/assets/img/Pantallas/Login.jpeg" height="600" width="200" alt="">
+<img src="/src/assets/img/Pantallas/Login.jpeg" height="600" width="300" alt="">
 
 _Registro_</br>
-<img src="/src/assets/img/Pantallas/Registro.jpeg" height="600" width="200" alt="">
+<img src="/src/assets/img/Pantallas/Registro.jpeg" height="600" width="300" alt="">
 
 _Inicio cliente_</br>
-<img src="/src/assets/img/Pantallas/Inicio-cliente.jpeg" height="600" width="200" alt="">
+<img src="/src/assets/img/Pantallas/Inicio-cliente.jpeg" height="600" width="300" alt="">
 
 _Inicio empleado_</br>
-<img src="/src/assets/img/Pantallas/Inicio-empleado.jpeg" height="600" width="200" alt="">
+<img src="/src/assets/img/Pantallas/Inicio-empleado.jpeg" height="600" width="300" alt="">
 
 _Menu lateral_</br>
-<img src="/src/assets/img/Pantallas/Lateral.jpeg" height="600" width="200" alt="">
+<img src="/src/assets/img/Pantallas/Lateral.jpeg" height="600" width="300" alt="">
 
 ---
 ⌨️ _UTN-FRA_ ⌨️
